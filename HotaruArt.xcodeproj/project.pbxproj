@@ -14,6 +14,7 @@
 		F38FDB441C9EE73200390C83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38FDB421C9EE73200390C83 /* Main.storyboard */; };
 		F38FDB461C9EE73200390C83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38FDB451C9EE73200390C83 /* Assets.xcassets */; };
 		F38FDB491C9EE73200390C83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38FDB471C9EE73200390C83 /* LaunchScreen.storyboard */; };
+		F38FDB591C9EF20D00390C83 /* DeviantArtApiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB581C9EF20D00390C83 /* DeviantArtApiHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		F38FDB451C9EE73200390C83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F38FDB481C9EE73200390C83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F38FDB4A1C9EE73200390C83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F38FDB571C9EF20D00390C83 /* DeviantArtApiHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviantArtApiHelper.h; sourceTree = "<group>"; };
+		F38FDB581C9EF20D00390C83 /* DeviantArtApiHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviantArtApiHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +85,13 @@
 		F38FDB381C9EE73200390C83 /* HotaruArt */ = {
 			isa = PBXGroup;
 			children = (
+				F38FDB451C9EE73200390C83 /* Assets.xcassets */,
+				F38FDB531C9EF11500390C83 /* UserInterface */,
+				F38FDB521C9EF0EA00390C83 /* DeviantArtAPI */,
+				F38FDB501C9EF09100390C83 /* ViewControllers */,
+				F38FDB511C9EF0AB00390C83 /* CoreData */,
 				F38FDB3C1C9EE73200390C83 /* AppDelegate.h */,
 				F38FDB3D1C9EE73200390C83 /* AppDelegate.m */,
-				F38FDB3F1C9EE73200390C83 /* ViewController.h */,
-				F38FDB401C9EE73200390C83 /* ViewController.m */,
-				F38FDB421C9EE73200390C83 /* Main.storyboard */,
-				F38FDB451C9EE73200390C83 /* Assets.xcassets */,
-				F38FDB471C9EE73200390C83 /* LaunchScreen.storyboard */,
 				F38FDB4A1C9EE73200390C83 /* Info.plist */,
 				F38FDB391C9EE73200390C83 /* Supporting Files */,
 			);
@@ -101,6 +104,64 @@
 				F38FDB3A1C9EE73200390C83 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F38FDB501C9EF09100390C83 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F38FDB551C9EF17A00390C83 /* Menu */,
+				F38FDB541C9EF17100390C83 /* Login */,
+				F38FDB561C9EF18200390C83 /* Feed */,
+				F38FDB3F1C9EE73200390C83 /* ViewController.h */,
+				F38FDB401C9EE73200390C83 /* ViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F38FDB511C9EF0AB00390C83 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		F38FDB521C9EF0EA00390C83 /* DeviantArtAPI */ = {
+			isa = PBXGroup;
+			children = (
+				F38FDB571C9EF20D00390C83 /* DeviantArtApiHelper.h */,
+				F38FDB581C9EF20D00390C83 /* DeviantArtApiHelper.m */,
+			);
+			name = DeviantArtAPI;
+			sourceTree = "<group>";
+		};
+		F38FDB531C9EF11500390C83 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				F38FDB471C9EE73200390C83 /* LaunchScreen.storyboard */,
+				F38FDB421C9EE73200390C83 /* Main.storyboard */,
+			);
+			name = UserInterface;
+			sourceTree = "<group>";
+		};
+		F38FDB541C9EF17100390C83 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		F38FDB551C9EF17A00390C83 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		F38FDB561C9EF18200390C83 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Feed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F38FDB591C9EF20D00390C83 /* DeviantArtApiHelper.m in Sources */,
 				F38FDB411C9EE73200390C83 /* ViewController.m in Sources */,
 				F38FDB3E1C9EE73200390C83 /* AppDelegate.m in Sources */,
 				F38FDB3B1C9EE73200390C83 /* main.m in Sources */,
