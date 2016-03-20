@@ -6,15 +6,17 @@
 //  Copyright © 2016 Elena. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
 #import "DeviantArtApiHelper.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import <SWRevealViewController/SWRevealViewController.h>
+#import "AppDelegate.h"
 
-@interface ViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LoginViewController
 
 - (IBAction)loginButtonTouch:(id)sender {
     [[DeviantArtApiHelper sharedHelper] loginWithCompletionHandler:^(NSError *error) {
@@ -22,6 +24,9 @@
             [SVProgressHUD showErrorWithStatus:error.localizedDescription maskType:SVProgressHUDMaskTypeClear];
         } else {
             [SVProgressHUD showSuccessWithStatus:@"Logined success!" maskType:SVProgressHUDMaskTypeClear];
+            SWRevealViewController *revealController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainScreen"];
+            AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+            appDelegate.window.rootViewController = revealController;
         }
     }];
 }
