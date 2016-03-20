@@ -6,8 +6,13 @@
 //  Copyright © 2016 Elena. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface DeviantArtApiHelper : NSObject
+
+@property (nonatomic, strong) NSString *accessToken;
++ (id)sharedHelper;
+- (BOOL)handeOpenURL:(NSURL*) url;
+- (void)loginWithCompletionHandler:(void(^)(NSError* error))completionHandler;
 
 @end

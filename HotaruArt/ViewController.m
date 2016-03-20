@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "DeviantArtApiHelper.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface ViewController ()
 
@@ -14,14 +16,14 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)loginButtonTouch:(id)sender {
+    [[DeviantArtApiHelper sharedHelper] loginWithCompletionHandler:^(NSError *error) {
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:error.localizedDescription maskType:SVProgressHUDMaskTypeClear];
+        } else {
+            [SVProgressHUD showSuccessWithStatus:@"Logined success!" maskType:SVProgressHUDMaskTypeClear];
+        }
+    }];
 }
 
 @end
