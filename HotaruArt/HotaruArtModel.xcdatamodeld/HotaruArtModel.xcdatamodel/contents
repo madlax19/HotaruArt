@@ -1,4 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
-    <elements/>
+    <entity name="Comment" representedClassName="Comment" syncable="YES">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="commentID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hidden" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parentID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="posted" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="replies" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="comments" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Content" representedClassName="Content" parentEntity="Image" syncable="YES">
+        <attribute name="filesize" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="deviationObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviationObject" inverseName="content" inverseEntity="DeviationObject" syncable="YES"/>
+    </entity>
+    <entity name="DeviationObject" representedClassName="DeviationObject" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deviationObjectID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="deviationid"/>
+            </userInfo>
+        </attribute>
+        <attribute name="is_favourited" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="printid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="deviations" inverseEntity="User" syncable="YES"/>
+        <relationship name="content" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Content" inverseName="deviationObject" inverseEntity="Content" syncable="YES"/>
+        <relationship name="preview" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Preview" inverseName="deviationObject" inverseEntity="Preview" syncable="YES"/>
+        <relationship name="thumbs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Thumb" inverseName="deviationObject" inverseEntity="Thumb" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="src" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transparency" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Preview" representedClassName="Preview" parentEntity="Image" syncable="YES">
+        <relationship name="deviationObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviationObject" inverseName="preview" inverseEntity="DeviationObject" syncable="YES"/>
+    </entity>
+    <entity name="Thumb" representedClassName="Thumb" parentEntity="Image" syncable="YES">
+        <relationship name="deviationObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviationObject" inverseName="thumbs" inverseEntity="DeviationObject" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="is_watching" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="usericon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="userid"/>
+            </userInfo>
+        </attribute>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="user" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="deviations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviationObject" inverseName="author" inverseEntity="DeviationObject" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Comment" positionX="250" positionY="36" width="128" height="148"/>
+        <element name="DeviationObject" positionX="-101" positionY="9" width="128" height="178"/>
+        <element name="Content" positionX="-459" positionY="179" width="128" height="73"/>
+        <element name="Image" positionX="-461" positionY="435" width="128" height="105"/>
+        <element name="Preview" positionX="-326" positionY="311" width="128" height="58"/>
+        <element name="Thumb" positionX="-99" positionY="459" width="128" height="58"/>
+        <element name="User" positionX="234" positionY="306" width="128" height="148"/>
+    </elements>
 </model>

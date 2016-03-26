@@ -19,6 +19,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"HotaruArtModel"];
+    //show_spinner
+    [[DeviantArtApiHelper sharedHelper] getDeviantUserInfo:^{
+        //show_spinner_succes("Some Text")
+        NSLog(@"Ne jopka");
+    } failure:^{
+        //show_spiner_Error("Some text");
+        NSLog(@"Jopka");
+    }];
     return YES;
 }
 

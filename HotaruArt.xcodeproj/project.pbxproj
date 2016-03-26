@@ -18,6 +18,21 @@
 		F38FDB5C1C9F144D00390C83 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB5B1C9F144D00390C83 /* FeedViewController.m */; };
 		F38FDB5F1C9F146A00390C83 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB5E1C9F146A00390C83 /* MenuViewController.m */; };
 		F38FDB621C9F1AF200390C83 /* HotaruArtModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB601C9F1AF200390C83 /* HotaruArtModel.xcdatamodeld */; };
+		F3D8DD641CA2B040001218CF /* Comment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD611CA2B040001218CF /* Comment+CoreDataProperties.m */; };
+		F3D8DD651CA2B040001218CF /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD631CA2B040001218CF /* Comment.m */; };
+		F3D8DD7E1CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD671CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m */; };
+		F3D8DD7F1CA2BE4A001218CF /* DeviationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD691CA2BE4A001218CF /* DeviationObject.m */; };
+		F3D8DD801CA2BE4A001218CF /* Content+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD6B1CA2BE4A001218CF /* Content+CoreDataProperties.m */; };
+		F3D8DD811CA2BE4A001218CF /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD6D1CA2BE4A001218CF /* Content.m */; };
+		F3D8DD821CA2BE4A001218CF /* Preview+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD6F1CA2BE4A001218CF /* Preview+CoreDataProperties.m */; };
+		F3D8DD831CA2BE4A001218CF /* Preview.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD711CA2BE4A001218CF /* Preview.m */; };
+		F3D8DD841CA2BE4A001218CF /* Thumb+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD731CA2BE4A001218CF /* Thumb+CoreDataProperties.m */; };
+		F3D8DD851CA2BE4A001218CF /* Thumb.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD751CA2BE4A001218CF /* Thumb.m */; };
+		F3D8DD861CA2BE4A001218CF /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD771CA2BE4A001218CF /* User+CoreDataProperties.m */; };
+		F3D8DD871CA2BE4A001218CF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD791CA2BE4A001218CF /* User.m */; };
+		F3D8DD881CA2BE4A001218CF /* Image+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD7B1CA2BE4A001218CF /* Image+CoreDataProperties.m */; };
+		F3D8DD891CA2BE4A001218CF /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD7D1CA2BE4A001218CF /* Image.m */; };
+		F3D8DD8D1CA48437001218CF /* FeedCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD8C1CA48436001218CF /* FeedCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +56,36 @@
 		F38FDB5D1C9F146A00390C83 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		F38FDB5E1C9F146A00390C83 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		F38FDB611C9F1AF200390C83 /* HotaruArtModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotaruArtModel.xcdatamodel; sourceTree = "<group>"; };
+		F3D8DD601CA2B040001218CF /* Comment+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Comment+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F3D8DD611CA2B040001218CF /* Comment+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Comment+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F3D8DD621CA2B040001218CF /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		F3D8DD631CA2B040001218CF /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		F3D8DD661CA2BE4A001218CF /* DeviationObject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DeviationObject+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F3D8DD671CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DeviationObject+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F3D8DD681CA2BE4A001218CF /* DeviationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviationObject.h; sourceTree = "<group>"; };
+		F3D8DD691CA2BE4A001218CF /* DeviationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviationObject.m; sourceTree = "<group>"; };
+		F3D8DD6A1CA2BE4A001218CF /* Content+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Content+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F3D8DD6B1CA2BE4A001218CF /* Content+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Content+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F3D8DD6C1CA2BE4A001218CF /* Content.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Content.h; sourceTree = "<group>"; };
+		F3D8DD6D1CA2BE4A001218CF /* Content.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Content.m; sourceTree = "<group>"; };
+		F3D8DD6E1CA2BE4A001218CF /* Preview+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Preview+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F3D8DD6F1CA2BE4A001218CF /* Preview+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Preview+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F3D8DD701CA2BE4A001218CF /* Preview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Preview.h; sourceTree = "<group>"; };
+		F3D8DD711CA2BE4A001218CF /* Preview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Preview.m; sourceTree = "<group>"; };
+		F3D8DD721CA2BE4A001218CF /* Thumb+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Thumb+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F3D8DD731CA2BE4A001218CF /* Thumb+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Thumb+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F3D8DD741CA2BE4A001218CF /* Thumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thumb.h; sourceTree = "<group>"; };
+		F3D8DD751CA2BE4A001218CF /* Thumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thumb.m; sourceTree = "<group>"; };
+		F3D8DD761CA2BE4A001218CF /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F3D8DD771CA2BE4A001218CF /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F3D8DD781CA2BE4A001218CF /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F3D8DD791CA2BE4A001218CF /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		F3D8DD7A1CA2BE4A001218CF /* Image+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Image+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F3D8DD7B1CA2BE4A001218CF /* Image+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Image+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F3D8DD7C1CA2BE4A001218CF /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		F3D8DD7D1CA2BE4A001218CF /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		F3D8DD8B1CA48436001218CF /* FeedCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedCollectionViewCell.h; sourceTree = "<group>"; };
+		F3D8DD8C1CA48436001218CF /* FeedCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +165,6 @@
 				F38FDB551C9EF17A00390C83 /* Menu */,
 				F38FDB541C9EF17100390C83 /* Login */,
 				F38FDB561C9EF18200390C83 /* Feed */,
-				F38FDB3F1C9EE73200390C83 /* LoginViewController.h */,
-				F38FDB401C9EE73200390C83 /* LoginViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -130,6 +173,34 @@
 			isa = PBXGroup;
 			children = (
 				F38FDB601C9F1AF200390C83 /* HotaruArtModel.xcdatamodeld */,
+				F3D8DD661CA2BE4A001218CF /* DeviationObject+CoreDataProperties.h */,
+				F3D8DD671CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m */,
+				F3D8DD681CA2BE4A001218CF /* DeviationObject.h */,
+				F3D8DD691CA2BE4A001218CF /* DeviationObject.m */,
+				F3D8DD6A1CA2BE4A001218CF /* Content+CoreDataProperties.h */,
+				F3D8DD6B1CA2BE4A001218CF /* Content+CoreDataProperties.m */,
+				F3D8DD6C1CA2BE4A001218CF /* Content.h */,
+				F3D8DD6D1CA2BE4A001218CF /* Content.m */,
+				F3D8DD6E1CA2BE4A001218CF /* Preview+CoreDataProperties.h */,
+				F3D8DD6F1CA2BE4A001218CF /* Preview+CoreDataProperties.m */,
+				F3D8DD701CA2BE4A001218CF /* Preview.h */,
+				F3D8DD711CA2BE4A001218CF /* Preview.m */,
+				F3D8DD721CA2BE4A001218CF /* Thumb+CoreDataProperties.h */,
+				F3D8DD731CA2BE4A001218CF /* Thumb+CoreDataProperties.m */,
+				F3D8DD741CA2BE4A001218CF /* Thumb.h */,
+				F3D8DD751CA2BE4A001218CF /* Thumb.m */,
+				F3D8DD761CA2BE4A001218CF /* User+CoreDataProperties.h */,
+				F3D8DD771CA2BE4A001218CF /* User+CoreDataProperties.m */,
+				F3D8DD781CA2BE4A001218CF /* User.h */,
+				F3D8DD791CA2BE4A001218CF /* User.m */,
+				F3D8DD7A1CA2BE4A001218CF /* Image+CoreDataProperties.h */,
+				F3D8DD7B1CA2BE4A001218CF /* Image+CoreDataProperties.m */,
+				F3D8DD7C1CA2BE4A001218CF /* Image.h */,
+				F3D8DD7D1CA2BE4A001218CF /* Image.m */,
+				F3D8DD601CA2B040001218CF /* Comment+CoreDataProperties.h */,
+				F3D8DD611CA2B040001218CF /* Comment+CoreDataProperties.m */,
+				F3D8DD621CA2B040001218CF /* Comment.h */,
+				F3D8DD631CA2B040001218CF /* Comment.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -155,6 +226,8 @@
 		F38FDB541C9EF17100390C83 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F38FDB3F1C9EE73200390C83 /* LoginViewController.h */,
+				F38FDB401C9EE73200390C83 /* LoginViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -171,10 +244,20 @@
 		F38FDB561C9EF18200390C83 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				F3D8DD8A1CA483BB001218CF /* Cell */,
 				F38FDB5A1C9F144D00390C83 /* FeedViewController.h */,
 				F38FDB5B1C9F144D00390C83 /* FeedViewController.m */,
 			);
 			name = Feed;
+			sourceTree = "<group>";
+		};
+		F3D8DD8A1CA483BB001218CF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F3D8DD8B1CA48436001218CF /* FeedCollectionViewCell.h */,
+				F3D8DD8C1CA48436001218CF /* FeedCollectionViewCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,12 +365,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D8DD841CA2BE4A001218CF /* Thumb+CoreDataProperties.m in Sources */,
+				F3D8DD851CA2BE4A001218CF /* Thumb.m in Sources */,
 				F38FDB591C9EF20D00390C83 /* DeviantArtApiHelper.m in Sources */,
+				F3D8DD801CA2BE4A001218CF /* Content+CoreDataProperties.m in Sources */,
 				F38FDB5F1C9F146A00390C83 /* MenuViewController.m in Sources */,
 				F38FDB621C9F1AF200390C83 /* HotaruArtModel.xcdatamodeld in Sources */,
+				F3D8DD891CA2BE4A001218CF /* Image.m in Sources */,
 				F38FDB5C1C9F144D00390C83 /* FeedViewController.m in Sources */,
 				F38FDB411C9EE73200390C83 /* LoginViewController.m in Sources */,
+				F3D8DD821CA2BE4A001218CF /* Preview+CoreDataProperties.m in Sources */,
+				F3D8DD641CA2B040001218CF /* Comment+CoreDataProperties.m in Sources */,
+				F3D8DD7F1CA2BE4A001218CF /* DeviationObject.m in Sources */,
+				F3D8DD831CA2BE4A001218CF /* Preview.m in Sources */,
+				F3D8DD861CA2BE4A001218CF /* User+CoreDataProperties.m in Sources */,
 				F38FDB3E1C9EE73200390C83 /* AppDelegate.m in Sources */,
+				F3D8DD651CA2B040001218CF /* Comment.m in Sources */,
+				F3D8DD881CA2BE4A001218CF /* Image+CoreDataProperties.m in Sources */,
+				F3D8DD871CA2BE4A001218CF /* User.m in Sources */,
+				F3D8DD7E1CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m in Sources */,
+				F3D8DD811CA2BE4A001218CF /* Content.m in Sources */,
+				F3D8DD8D1CA48437001218CF /* FeedCollectionViewCell.m in Sources */,
 				F38FDB3B1C9EE73200390C83 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

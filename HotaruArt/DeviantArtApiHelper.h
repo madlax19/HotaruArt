@@ -11,8 +11,15 @@
 @interface DeviantArtApiHelper : NSObject
 
 @property (nonatomic, strong) NSString *accessToken;
+@property (nonatomic, strong) NSString *userId;
+@property (nonatomic, strong) NSString *userName;
+@property (nonatomic, strong) NSString *userIcon;
+@property (nonatomic, strong) NSString *type;
+
 + (id)sharedHelper;
 - (BOOL)handeOpenURL:(NSURL*) url;
 - (void)loginWithCompletionHandler:(void(^)(NSError* error))completionHandler;
+- (void)getDeviantUserInfo:(void(^)())success failure:(void(^)())failure;
+- (void)browseNewest:(void(^)())success failure:(void(^)())failure;
 
 @end
