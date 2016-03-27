@@ -15,6 +15,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "DeviantArtApiHelper.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "DetailViewController.h"
 
 @interface FeedViewController ()<NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -100,7 +101,10 @@
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+    DeviationObject *devObject = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
+    DetailViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    viewController.deviationObject = devObject;
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate

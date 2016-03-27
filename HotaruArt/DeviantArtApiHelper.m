@@ -9,6 +9,7 @@
 #import "DeviantArtApiHelper.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import "DeviationObject.h"
+#import "Comment.h"
 
 @interface DeviantArtApiHelper()
 @property (nonatomic, strong) NSURLSession *session;
@@ -155,7 +156,7 @@
     [task resume];
 }
 
--(void)getCommentForDeviationID:(NSString*)deviationID success:(void(^)())success failure:(void(^)())failure {
+- (void)getCommentForDeviationID:(NSString*)deviationID success:(void(^)())success failure:(void(^)())failure {
     NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/comments/deviation/%@?access_token=%@",deviationID,self.accessToken];
     NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         void(^failureBlock)() = ^{
@@ -173,7 +174,10 @@
             } else {
                 NSArray *thread = [jsonData objectForKey:@"thread"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                    [DeviationObject MR_importFromArray:thread inContext:localContext];
+                    NSArray<Comment*> *array = [Comment MR_importFromArray:thread inContext:localContext];
+                    for (Comment *comment in array) {
+                        comment.deviationID = deviationID;
+                    }
                     if (success) {
                         success();
                     }

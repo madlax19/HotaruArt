@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Comment (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSString *commentID;
+@property (nullable, nonatomic, retain) NSString *deviationID;
 @property (nullable, nonatomic, retain) NSString *parentID;
 @property (nullable, nonatomic, retain) NSString *posted;
 @property (nullable, nonatomic, retain) NSNumber *replies;

@@ -21,5 +21,6 @@
 - (void)loginWithCompletionHandler:(void(^)(NSError* error))completionHandler;
 - (void)getDeviantUserInfo:(void(^)())success failure:(void(^)())failure;
 - (void)browseNewest:(void(^)())success failure:(void(^)())failure;
+- (void)getCommentForDeviationID:(NSString*)deviationID success:(void(^)())success failure:(void(^)())failure;
 
 @end

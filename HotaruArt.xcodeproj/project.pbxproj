@@ -18,6 +18,9 @@
 		F38FDB5C1C9F144D00390C83 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB5B1C9F144D00390C83 /* FeedViewController.m */; };
 		F38FDB5F1C9F146A00390C83 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB5E1C9F146A00390C83 /* MenuViewController.m */; };
 		F38FDB621C9F1AF200390C83 /* HotaruArtModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB601C9F1AF200390C83 /* HotaruArtModel.xcdatamodeld */; };
+		F3929C421CA7FE5A003153F9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3929C411CA7FE5A003153F9 /* DetailViewController.m */; };
+		F3929C451CA8051B003153F9 /* DeviationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3929C441CA8051B003153F9 /* DeviationTableViewCell.m */; };
+		F3929C481CA80538003153F9 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3929C471CA80538003153F9 /* CommentTableViewCell.m */; };
 		F3D8DD641CA2B040001218CF /* Comment+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD611CA2B040001218CF /* Comment+CoreDataProperties.m */; };
 		F3D8DD651CA2B040001218CF /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD631CA2B040001218CF /* Comment.m */; };
 		F3D8DD7E1CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D8DD671CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m */; };
@@ -56,6 +59,12 @@
 		F38FDB5D1C9F146A00390C83 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		F38FDB5E1C9F146A00390C83 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		F38FDB611C9F1AF200390C83 /* HotaruArtModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotaruArtModel.xcdatamodel; sourceTree = "<group>"; };
+		F3929C401CA7FE5A003153F9 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		F3929C411CA7FE5A003153F9 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		F3929C431CA8051B003153F9 /* DeviationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviationTableViewCell.h; sourceTree = "<group>"; };
+		F3929C441CA8051B003153F9 /* DeviationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviationTableViewCell.m; sourceTree = "<group>"; };
+		F3929C461CA80538003153F9 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		F3929C471CA80538003153F9 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		F3D8DD601CA2B040001218CF /* Comment+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Comment+CoreDataProperties.h"; sourceTree = "<group>"; };
 		F3D8DD611CA2B040001218CF /* Comment+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Comment+CoreDataProperties.m"; sourceTree = "<group>"; };
 		F3D8DD621CA2B040001218CF /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
@@ -165,6 +174,7 @@
 				F38FDB551C9EF17A00390C83 /* Menu */,
 				F38FDB541C9EF17100390C83 /* Login */,
 				F38FDB561C9EF18200390C83 /* Feed */,
+				F3929C3E1CA7FDE5003153F9 /* Detail */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -249,6 +259,27 @@
 				F38FDB5B1C9F144D00390C83 /* FeedViewController.m */,
 			);
 			name = Feed;
+			sourceTree = "<group>";
+		};
+		F3929C3E1CA7FDE5003153F9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F3929C3F1CA7FE20003153F9 /* Cell */,
+				F3929C401CA7FE5A003153F9 /* DetailViewController.h */,
+				F3929C411CA7FE5A003153F9 /* DetailViewController.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		F3929C3F1CA7FE20003153F9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F3929C431CA8051B003153F9 /* DeviationTableViewCell.h */,
+				F3929C441CA8051B003153F9 /* DeviationTableViewCell.m */,
+				F3929C461CA80538003153F9 /* CommentTableViewCell.h */,
+				F3929C471CA80538003153F9 /* CommentTableViewCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		F3D8DD8A1CA483BB001218CF /* Cell */ = {
@@ -366,7 +397,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3D8DD841CA2BE4A001218CF /* Thumb+CoreDataProperties.m in Sources */,
+				F3929C451CA8051B003153F9 /* DeviationTableViewCell.m in Sources */,
 				F3D8DD851CA2BE4A001218CF /* Thumb.m in Sources */,
+				F3929C421CA7FE5A003153F9 /* DetailViewController.m in Sources */,
 				F38FDB591C9EF20D00390C83 /* DeviantArtApiHelper.m in Sources */,
 				F3D8DD801CA2BE4A001218CF /* Content+CoreDataProperties.m in Sources */,
 				F38FDB5F1C9F146A00390C83 /* MenuViewController.m in Sources */,
@@ -386,6 +419,7 @@
 				F3D8DD7E1CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m in Sources */,
 				F3D8DD811CA2BE4A001218CF /* Content.m in Sources */,
 				F3D8DD8D1CA48437001218CF /* FeedCollectionViewCell.m in Sources */,
+				F3929C481CA80538003153F9 /* CommentTableViewCell.m in Sources */,
 				F38FDB3B1C9EE73200390C83 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

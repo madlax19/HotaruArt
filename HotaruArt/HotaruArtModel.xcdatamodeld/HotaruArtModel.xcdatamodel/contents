@@ -3,6 +3,7 @@
     <entity name="Comment" representedClassName="Comment" syncable="YES">
         <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="commentID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deviationID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hidden" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="parentID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="posted" optional="YES" attributeType="String" syncable="YES"/>
@@ -54,9 +55,9 @@
         <relationship name="deviations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviationObject" inverseName="author" inverseEntity="DeviationObject" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Comment" positionX="250" positionY="36" width="128" height="148"/>
-        <element name="DeviationObject" positionX="-101" positionY="9" width="128" height="178"/>
+        <element name="Comment" positionX="250" positionY="36" width="128" height="163"/>
         <element name="Content" positionX="-459" positionY="179" width="128" height="73"/>
+        <element name="DeviationObject" positionX="-101" positionY="9" width="128" height="178"/>
         <element name="Image" positionX="-461" positionY="435" width="128" height="105"/>
         <element name="Preview" positionX="-326" positionY="311" width="128" height="58"/>
         <element name="Thumb" positionX="-99" positionY="459" width="128" height="58"/>
