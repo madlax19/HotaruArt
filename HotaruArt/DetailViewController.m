@@ -16,6 +16,7 @@
 #import "DeviationTableViewCell.h"
 #import "CommentTableViewCell.h"
 #import "Image.h"
+#import "ProfileViewController.h"
 
 @interface DetailViewController () <UITableViewDataSource, NSFetchedResultsControllerDelegate, UITableViewDelegate>
 
@@ -63,6 +64,13 @@
     [self.blockOperations removeAllObjects];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"showUserProfile"]) {
+        ProfileViewController *profileViewController = segue.destinationViewController;
+        profileViewController.user = self.deviationObject.author;
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.fetchedResultsController.fetchedObjects.count+1;
 }
@@ -89,6 +97,9 @@
         [deviationCell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:self.deviationObject.author.usericon]];
         [deviationCell.deviationImageView sd_setImageWithURL:[NSURL URLWithString:image.src]];
         deviationCell.userNameLabel.text = self.deviationObject.author.username;
+        deviationCell.onUserTitleTouch = ^{
+            [self performSegueWithIdentifier:@"showUserProfile" sender:nil];
+        };
     } else {
         CommentTableViewCell *commentCell = (CommentTableViewCell *)cell;
         Comment *comment = self.fetchedResultsController.fetchedObjects[indexPath.row - 1];

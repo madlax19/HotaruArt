@@ -12,4 +12,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *deviationImageView;
+@property (nonatomic, copy) void(^onUserTitleTouch)();
 @end

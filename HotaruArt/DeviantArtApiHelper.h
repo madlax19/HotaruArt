@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface DeviantArtApiHelper : NSObject
 
@@ -22,5 +23,7 @@
 - (void)getDeviantUserInfo:(void(^)())success failure:(void(^)())failure;
 - (void)browseNewest:(void(^)())success failure:(void(^)())failure;
 - (void)getCommentForDeviationID:(NSString*)deviationID success:(void(^)())success failure:(void(^)())failure;
+- (void)getUserDeviations:(NSString*)userName success:(void(^)())success failure:(void(^)())failure;
+- (void)getUser:(NSString*)userName success:(void(^)(User*))success failure:(void(^)())failure;
 
 @end

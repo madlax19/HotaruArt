@@ -127,8 +127,72 @@
 
 }
 
+- (void)getUser:(NSString*)userName success:(void(^)(User*))success failure:(void(^)())failure {
+    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/user/profile/%@?token=%@", userName, self.accessToken];
+    NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        void(^failureBlock)() = ^{
+            if (failure) {
+                failure();
+            }
+        };
+        if (error) {
+            failureBlock();
+        } else {
+            NSError *jsonError = nil;
+            NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+            if (jsonError) {
+                failureBlock();
+            } else {
+                NSDictionary *userDictionary = [jsonData objectForKey:@"user"];
+                if (userDictionary) {
+                    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+                        User *user = [User MR_importFromObject:userDictionary inContext:localContext];
+                        if (success) {
+                            dispatch_async(dispatch_get_main_queue(), ^{
+                                success(user);
+                            });
+                        }
+                    }];
+                }
+            }
+        }
+    }];
+    [task resume];
+    
+}
+
+
 - (void)browseNewest:(void(^)())success failure:(void(^)())failure {
     NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/newest?token=%@", self.accessToken];
+    NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        void(^failureBlock)() = ^{
+            if (failure) {
+                failure();
+            }
+        };
+        if (error) {
+            failureBlock();
+        } else {
+            NSError *jsonError = nil;
+            NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+            if (jsonError) {
+                failureBlock();
+            } else {
+                NSArray *results = [jsonData objectForKey:@"results"];
+                [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+                    [DeviationObject MR_importFromArray:results inContext:localContext];
+                    if (success) {
+                        success();
+                    }
+                }];
+            }
+        }
+    }];
+    [task resume];
+}
+
+- (void)getUserDeviations:(NSString*)userName success:(void(^)())success failure:(void(^)())failure {
+    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/gallery/all?token=%@&username=%@", self.accessToken, userName];
     NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         void(^failureBlock)() = ^{
             if (failure) {

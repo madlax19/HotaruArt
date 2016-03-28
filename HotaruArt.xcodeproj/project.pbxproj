@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D1E9A9D3DD459396CF3ECA3 /* libPods-HotaruArt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A5C7ED3330593B092F609E /* libPods-HotaruArt.a */; };
+		F34D5D6C1CA9A0550037E1D8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F34D5D6B1CA9A0550037E1D8 /* ProfileViewController.m */; };
 		F38FDB3B1C9EE73200390C83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB3A1C9EE73200390C83 /* main.m */; };
 		F38FDB3E1C9EE73200390C83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB3D1C9EE73200390C83 /* AppDelegate.m */; };
 		F38FDB411C9EE73200390C83 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB401C9EE73200390C83 /* LoginViewController.m */; };
@@ -42,6 +43,8 @@
 		12F181E450C32C7476273DE6 /* Pods-HotaruArt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotaruArt.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotaruArt/Pods-HotaruArt.release.xcconfig"; sourceTree = "<group>"; };
 		A3A5C7ED3330593B092F609E /* libPods-HotaruArt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotaruArt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC78F24F6358360A54A087CF /* Pods-HotaruArt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotaruArt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotaruArt/Pods-HotaruArt.debug.xcconfig"; sourceTree = "<group>"; };
+		F34D5D6A1CA9A0550037E1D8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		F34D5D6B1CA9A0550037E1D8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		F38FDB361C9EE73200390C83 /* HotaruArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotaruArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F38FDB3A1C9EE73200390C83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F38FDB3C1C9EE73200390C83 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -126,6 +129,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F34D5D691CA99FA10037E1D8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F34D5D6A1CA9A0550037E1D8 /* ProfileViewController.h */,
+				F34D5D6B1CA9A0550037E1D8 /* ProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		F38FDB2D1C9EE73200390C83 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +187,7 @@
 				F38FDB541C9EF17100390C83 /* Login */,
 				F38FDB561C9EF18200390C83 /* Feed */,
 				F3929C3E1CA7FDE5003153F9 /* Detail */,
+				F34D5D691CA99FA10037E1D8 /* Profile */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -418,6 +431,7 @@
 				F3D8DD871CA2BE4A001218CF /* User.m in Sources */,
 				F3D8DD7E1CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m in Sources */,
 				F3D8DD811CA2BE4A001218CF /* Content.m in Sources */,
+				F34D5D6C1CA9A0550037E1D8 /* ProfileViewController.m in Sources */,
 				F3D8DD8D1CA48437001218CF /* FeedCollectionViewCell.m in Sources */,
 				F3929C481CA80538003153F9 /* CommentTableViewCell.m in Sources */,
 				F38FDB3B1C9EE73200390C83 /* main.m in Sources */,

@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.m
 //  
 //
-//  Created by Elena on 23.03.16.
+//  Created by Elena on 28.03.16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -18,6 +18,9 @@
 @dynamic usericon;
 @dynamic userID;
 @dynamic username;
+@dynamic coverPhoto;
+@dynamic watchersCount;
+@dynamic friendsCount;
 @dynamic comments;
 @dynamic deviations;
 

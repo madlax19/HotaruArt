@@ -42,6 +42,16 @@
         <relationship name="deviationObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviationObject" inverseName="thumbs" inverseEntity="DeviationObject" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="coverPhoto" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="profile.cover_photo"/>
+            </userInfo>
+        </attribute>
+        <attribute name="friendsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="stats.friends"/>
+            </userInfo>
+        </attribute>
         <attribute name="is_watching" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="usericon" optional="YES" attributeType="String" syncable="YES"/>
@@ -51,6 +61,11 @@
             </userInfo>
         </attribute>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="watchersCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="stats.watchers"/>
+            </userInfo>
+        </attribute>
         <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="user" inverseEntity="Comment" syncable="YES"/>
         <relationship name="deviations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviationObject" inverseName="author" inverseEntity="DeviationObject" syncable="YES"/>
     </entity>
@@ -61,6 +76,6 @@
         <element name="Image" positionX="-461" positionY="435" width="128" height="105"/>
         <element name="Preview" positionX="-326" positionY="311" width="128" height="58"/>
         <element name="Thumb" positionX="-99" positionY="459" width="128" height="58"/>
-        <element name="User" positionX="234" positionY="306" width="128" height="148"/>
+        <element name="User" positionX="234" positionY="306" width="128" height="193"/>
     </elements>
 </model>

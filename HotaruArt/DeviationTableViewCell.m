@@ -11,6 +11,9 @@
 @implementation DeviationTableViewCell
 
 - (IBAction)userNameTouch:(id)sender {
+    if (self.onUserTitleTouch) {
+        self.onUserTitleTouch();
+    }
 }
 
 
