@@ -41,7 +41,21 @@
     self.collectionViewLayout.itemSize = CGSizeMake(width, width);
     self.collectionViewLayout.minimumInteritemSpacing = 8;
     self.collectionViewLayout.minimumLineSpacing = 8;
+    
+    self.avatarImageView.layer.masksToBounds = YES;
+    self.avatarImageView.layer.cornerRadius = self.avatarImageView.bounds.size.width / 2.0;
+    self.avatarImageView.layer.borderWidth = 2;
+    self.avatarImageView.layer.borderColor = [UIColor colorWithRed:0.114 green:0.122 blue:0.239 alpha:1.0].CGColor;
+    [self applyButtonsStyle:@[self.followersButton, self.followingButton]];
+}
 
+- (void)applyButtonsStyle:(NSArray*) buttons {
+    for (UIView *view in buttons) {
+        view.layer.masksToBounds = YES;
+        view.layer.cornerRadius = 4;
+        view.layer.borderWidth = 1;
+        view.layer.borderColor = [UIColor colorWithRed:0.114 green:0.122 blue:0.239 alpha:1.0].CGColor;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
