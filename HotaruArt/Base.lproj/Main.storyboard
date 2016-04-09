@@ -4,7 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -35,6 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="261" y="389"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Z0V-nf-CI3">
@@ -47,22 +48,6 @@
                     <view key="view" contentMode="scaleToFill" id="3JW-Ae-Jlw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5K-Vs-3vl">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Title" id="DTL-gw-iLM">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="I8f-VM-ewc">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PDz-Gc-cdZ">
-                                                <rect key="frame" x="16" y="7" width="71" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -78,7 +63,7 @@
         <!--Menu View Controller-->
         <scene sceneID="xDV-XV-Ju3">
             <objects>
-                <viewController id="PIz-LJ-VOf" customClass="MenuViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="PIz-LJ-VOf" customClass="MenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TqO-M1-Uci"/>
                         <viewControllerLayoutGuide type="bottom" id="gD9-zi-Nda"/>
@@ -86,10 +71,101 @@
                     <view key="view" contentMode="scaleToFill" id="JMu-kQ-rYd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HX6-tZ-YR4" customClass="UIControl">
+                                <rect key="frame" x="0.0" y="20" width="320" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D1g-67-kQz">
+                                        <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="D1g-67-kQz" secondAttribute="height" multiplier="1:1" id="ffJ-gu-O8T"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZZ-2E-P0p">
+                                        <rect key="frame" x="80" y="25" width="230" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="65h-rJ-CQ8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="uZZ-2E-P0p" firstAttribute="leading" secondItem="D1g-67-kQz" secondAttribute="trailing" constant="10" id="4jp-S6-BKa"/>
+                                    <constraint firstItem="D1g-67-kQz" firstAttribute="top" secondItem="HX6-tZ-YR4" secondAttribute="top" constant="10" id="8cb-RS-lrR"/>
+                                    <constraint firstItem="D1g-67-kQz" firstAttribute="leading" secondItem="HX6-tZ-YR4" secondAttribute="leading" constant="10" id="AZS-6f-Poy"/>
+                                    <constraint firstAttribute="height" constant="80" id="gDY-lV-8Il"/>
+                                    <constraint firstAttribute="trailing" secondItem="uZZ-2E-P0p" secondAttribute="trailing" constant="10" id="iOf-6I-z0a"/>
+                                    <constraint firstAttribute="bottom" secondItem="D1g-67-kQz" secondAttribute="bottom" constant="10" id="k5h-Ep-JeO"/>
+                                    <constraint firstItem="uZZ-2E-P0p" firstAttribute="centerY" secondItem="HX6-tZ-YR4" secondAttribute="centerY" id="rVO-Da-eTB"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" placeholder="Search for Deviations" translatesAutoresizingMaskIntoConstraints="NO" id="j9O-5N-cKG">
+                                <rect key="frame" x="0.0" y="100" width="250" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="CFl-TR-dPV"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.1019607843" green="0.062745098040000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="PIz-LJ-VOf" id="5qC-IE-Qh2"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="37" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5p3-6r-e6h">
+                                <rect key="frame" x="0.0" y="144" width="320" height="424"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" textLabel="3Aw-CK-hYG" rowHeight="37" style="IBUITableViewCellStyleDefault" id="Zt6-Sg-zIg">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="37"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zt6-Sg-zIg" id="nvI-5x-sQ6">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Aw-CK-hYG">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fex-0z-am3">
+                                                    <rect key="frame" x="0.0" y="36" width="320" height="1"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="PIz-LJ-VOf" id="NzU-Rq-iva"/>
+                                    <outlet property="delegate" destination="PIz-LJ-VOf" id="qe7-BE-h5j"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1019607843" green="0.062745098040000002" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="j9O-5N-cKG" firstAttribute="leading" secondItem="JMu-kQ-rYd" secondAttribute="leading" id="8Tm-Bx-ZNI"/>
+                            <constraint firstItem="5p3-6r-e6h" firstAttribute="leading" secondItem="JMu-kQ-rYd" secondAttribute="leading" id="C8Y-36-ECT"/>
+                            <constraint firstAttribute="trailing" secondItem="5p3-6r-e6h" secondAttribute="trailing" id="Jb6-Cr-zgr"/>
+                            <constraint firstItem="HX6-tZ-YR4" firstAttribute="leading" secondItem="JMu-kQ-rYd" secondAttribute="leading" id="Q9i-GY-9vH"/>
+                            <constraint firstItem="HX6-tZ-YR4" firstAttribute="top" secondItem="TqO-M1-Uci" secondAttribute="bottom" id="VvY-nZ-Lnq"/>
+                            <constraint firstAttribute="trailing" secondItem="HX6-tZ-YR4" secondAttribute="trailing" id="dMP-Be-LeV"/>
+                            <constraint firstItem="gD9-zi-Nda" firstAttribute="top" secondItem="5p3-6r-e6h" secondAttribute="bottom" id="eDF-Wk-t1G"/>
+                            <constraint firstItem="j9O-5N-cKG" firstAttribute="top" secondItem="HX6-tZ-YR4" secondAttribute="bottom" id="fdC-t4-HbN"/>
+                            <constraint firstItem="5p3-6r-e6h" firstAttribute="top" secondItem="j9O-5N-cKG" secondAttribute="bottom" id="k6R-uM-uR7"/>
+                            <constraint firstItem="j9O-5N-cKG" firstAttribute="width" secondItem="JMu-kQ-rYd" secondAttribute="width" multiplier="0.78" id="xC0-gJ-Ozh"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="avatarImageView" destination="D1g-67-kQz" id="A21-VI-AtV"/>
+                        <outlet property="deviationsSearchBar" destination="j9O-5N-cKG" id="UTo-S7-yvh"/>
+                        <outlet property="userNameLabel" destination="rVO-Da-eTB" id="ToE-Mz-KPc"/>
                         <segue destination="BhX-Ld-1wC" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="btk-Rr-PdI"/>
                     </connections>
                 </viewController>
@@ -97,7 +173,7 @@
             </objects>
             <point key="canvasLocation" x="783" y="1789"/>
         </scene>
-        <!--Feed View Controller-->
+        <!--Newest-->
         <scene sceneID="fHJ-jK-X6V">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="ro8-CL-mKk" customClass="FeedViewController" sceneMemberID="viewController">
@@ -109,8 +185,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6bO-kE-y7u">
-                                <rect key="frame" x="8" y="64" width="304" height="504"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6bO-kE-y7u">
+                                <rect key="frame" x="8" y="0.0" width="304" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="fW4-Iz-qCR">
                                     <size key="itemSize" width="148" height="148"/>
@@ -157,22 +233,16 @@
                             <constraint firstItem="Bd7-St-Pll" firstAttribute="top" secondItem="6bO-kE-y7u" secondAttribute="bottom" id="dEZ-2i-7xd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ng2-k4-v3n">
-                        <leftBarButtonItems>
-                            <barButtonItem style="plain" id="k5M-lw-dYA">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sEG-Jt-fqV">
-                                    <rect key="frame" x="16" y="7" width="71" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Button"/>
-                                </button>
-                            </barButtonItem>
-                            <barButtonItem title="Tap" id="ffi-yu-ump"/>
-                        </leftBarButtonItems>
+                    <navigationItem key="navigationItem" title="Newest" id="ng2-k4-v3n">
+                        <barButtonItem key="leftBarButtonItem" image="menu_icon" id="KrP-wc-8UQ">
+                            <connections>
+                                <action selector="menuTouchAction:" destination="ro8-CL-mKk" id="gPm-b0-X08"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="6bO-kE-y7u" id="vOa-q8-v2p"/>
                         <outlet property="collectionViewLayout" destination="fW4-Iz-qCR" id="pZV-ZL-ioK"/>
-                        <outlet property="sidebarButton" destination="ffi-yu-ump" id="9B6-X7-UX0"/>
                         <segue destination="j6U-9f-n7p" kind="show" id="mHj-dr-Fyw"/>
                     </connections>
                 </viewController>
@@ -521,6 +591,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="FfB-gP-8B8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.10196078431372549" green="0.062745098039215685" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
@@ -533,6 +604,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="menu_icon" width="34" height="34"/>
         <image name="screen_background" width="400" height="640"/>
     </resources>
 </document>

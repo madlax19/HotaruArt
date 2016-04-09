@@ -14,6 +14,11 @@
         <attribute name="filesize" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="deviationObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviationObject" inverseName="content" inverseEntity="DeviationObject" syncable="YES"/>
     </entity>
+    <entity name="DACategory" representedClassName="DACategory" syncable="YES">
+        <attribute name="catpath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="has_subcategory" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="DeviationObject" representedClassName="DeviationObject" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="deviationObjectID" optional="YES" attributeType="String" syncable="YES">
@@ -77,5 +82,6 @@
         <element name="Preview" positionX="-326" positionY="311" width="128" height="58"/>
         <element name="Thumb" positionX="-99" positionY="459" width="128" height="58"/>
         <element name="User" positionX="234" positionY="306" width="128" height="193"/>
+        <element name="DACategory" positionX="-243" positionY="171" width="128" height="90"/>
     </elements>
 </model>

@@ -10,6 +10,8 @@
 #import <MagicalRecord/MagicalRecord.h>
 #import "DeviationObject.h"
 #import "Comment.h"
+#import "DACategory.h"
+#import <Lockbox/Lockbox.h>
 
 @interface DeviantArtApiHelper()
 @property (nonatomic, strong) NSURLSession *session;
@@ -80,13 +82,22 @@
     [task resume];
 }
 
+- (void)setAccessToken:(NSString *)accessToken {
+    [Lockbox archiveObject:accessToken forKey:@"accessTocken"];
+}
+
+- (NSString*)accessToken {
+    return [Lockbox unarchiveObjectForKey:@"accessTocken"];
+}
 
 - (void)getDeviantUserInfo:(void(^)())success failure:(void(^)())failure {
     NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/user/whoami?token=%@", self.accessToken];
     NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         void(^failureBlock)() = ^{
             if (failure) {
-                failure();
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    failure();
+                });
             }
         };
         if (error) {
@@ -97,7 +108,7 @@
             if (jsonError) {
                 failureBlock();
             } else {
-                NSString *userid= [jsonData objectForKey:@"userid"];
+                NSString *userid = [jsonData objectForKey:@"userid"];
                 if (userid) {
                     self.userId = userid;
                 }
@@ -118,7 +129,9 @@
                 }
                 
                 if (success) {
-                    success();
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        success();
+                    });
                 }
             }
         }
@@ -161,9 +174,102 @@
     
 }
 
+- (void)getCategory:(void(^)())success failure:(void(^)())failure {
+    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/categorytree?token=%@", self.accessToken];
+    NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        void(^failureBlock)() = ^{
+            if (failure) {
+                 failure();
+            }
+        };
+        if (error) {
+            failureBlock();
+        } else {
+            NSError *jsonError = nil;
+            NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error:&jsonError];
+            if (jsonError) {
+                failureBlock();
+            } else {
+                NSArray *categoriesArray = [jsonData objectForKey:@"categories"];
+                if (categoriesArray) {
+                    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+                        [DACategory MR_importFromArray:categoriesArray inContext:localContext];
+                    }];
+                }
+                
+            }
+        }
+    }];
+    [task resume];
+}
 
-- (void)browseNewest:(void(^)())success failure:(void(^)())failure {
+
+- (void)browseNewest:(NSString*)searchText success:(void(^)())success failure:(void(^)())failure {
     NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/newest?token=%@", self.accessToken];
+    if (searchText && searchText.length > 0) {
+        url = [NSString stringWithFormat:@"%@&q=%@", url, searchText];
+    }
+    NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        void(^failureBlock)() = ^{
+            if (failure) {
+                failure();
+            }
+        };
+        if (error) {
+            failureBlock();
+        } else {
+            NSError *jsonError = nil;
+            NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+            if (jsonError) {
+                failureBlock();
+            } else {
+                NSArray *results = [jsonData objectForKey:@"results"];
+                [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+                    [DeviationObject MR_importFromArray:results inContext:localContext];
+                    if (success) {
+                        success();
+                    }
+                }];
+            }
+        }
+    }];
+    [task resume];
+}
+
+- (void)browseHot:(void(^)())success failure:(void(^)())failure{
+    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/hot?token=%@", self.accessToken];
+    NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        void(^failureBlock)() = ^{
+            if (failure) {
+                failure();
+            }
+        };
+        if (error) {
+            failureBlock();
+        } else {
+            NSError *jsonError = nil;
+            NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+            if (jsonError) {
+                failureBlock();
+            } else {
+                NSArray *results = [jsonData objectForKey:@"results"];
+                [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+                    [DeviationObject MR_importFromArray:results inContext:localContext];
+                    if (success) {
+                        success();
+                    }
+                }];
+            }
+        }
+    }];
+    [task resume];
+}
+
+- (void)browsePopular:(NSString*)searchText success:(void (^)())success failure:(void (^)())failure {
+    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/popular?token=%@", self.accessToken];
+    if (searchText && searchText.length > 0) {
+        url = [NSString stringWithFormat:@"%@&q=%@", url, searchText];
+    }
     NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         void(^failureBlock)() = ^{
             if (failure) {
@@ -249,6 +355,41 @@
             }
         }
 
+    }];
+    [task resume];
+}
+
+- (void)checkAuthTokenWithSuccess:(void(^)())success failure:(void(^)())failure {
+    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/placebo?token=%@", self.accessToken];
+    NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        void(^failureBlock)() = ^{
+            if (failure) {
+                self.accessToken = nil;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    failure();
+                });
+            }
+        };
+        if (error) {
+            failureBlock();
+        } else {
+            NSError *jsonError = nil;
+            NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&jsonError];
+            if (jsonError) {
+                failureBlock();
+            } else {
+                NSString *results = [jsonData objectForKey:@"status"];
+                if ([results isEqualToString:@"success"]) {
+                    if (success) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            success();
+                        });
+                    }
+                } else {
+                    failureBlock();
+                }
+            }
+        }
     }];
     [task resume];
 }

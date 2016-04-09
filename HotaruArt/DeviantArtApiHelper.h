@@ -19,11 +19,14 @@
 
 + (id)sharedHelper;
 - (BOOL)handeOpenURL:(NSURL*) url;
+- (void)checkAuthTokenWithSuccess:(void(^)())success failure:(void(^)())failure;
 - (void)loginWithCompletionHandler:(void(^)(NSError* error))completionHandler;
 - (void)getDeviantUserInfo:(void(^)())success failure:(void(^)())failure;
-- (void)browseNewest:(void(^)())success failure:(void(^)())failure;
+- (void)browseNewest:(NSString*)searchText success:(void(^)())success failure:(void(^)())failure;
 - (void)getCommentForDeviationID:(NSString*)deviationID success:(void(^)())success failure:(void(^)())failure;
 - (void)getUserDeviations:(NSString*)userName success:(void(^)())success failure:(void(^)())failure;
 - (void)getUser:(NSString*)userName success:(void(^)(User*))success failure:(void(^)())failure;
+- (void)browseHot:(void(^)())success failure:(void(^)())failure;
+- (void)browsePopular:(NSString*)searchText success:(void (^)())success failure:(void (^)())failure;
 
 @end

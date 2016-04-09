@@ -107,6 +107,10 @@
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
+- (IBAction)menuTouchAction:(id)sender {
+    [self.revealViewController revealToggleAnimated:YES];
+}
+
 #pragma mark - NSFetchedResultsControllerDelegate
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {

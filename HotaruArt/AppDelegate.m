@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DeviantArtApiHelper.h"
 #import <MagicalRecord/MagicalRecord.h>
+#import <SWRevealViewController/SWRevealViewController.h>
 
 @interface AppDelegate ()
 
@@ -19,14 +20,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"HotaruArtModel"];
-    //show_spinner
-    [[DeviantArtApiHelper sharedHelper] getDeviantUserInfo:^{
-        //show_spinner_succes("Some Text")
-        NSLog(@"Ne jopka");
+    
+    [[DeviantArtApiHelper sharedHelper] checkAuthTokenWithSuccess:^{
+        [[DeviantArtApiHelper sharedHelper] getDeviantUserInfo:^{
+            UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            SWRevealViewController *revealController = [storyBoard instantiateViewControllerWithIdentifier:@"MainScreen"];
+            revealController.rearViewRevealWidth = self.window.bounds.size.width * 0.66;
+            self.window.rootViewController = revealController;
+        } failure:^{
+            
+        }];
     } failure:^{
-        //show_spiner_Error("Some text");
-        NSLog(@"Jopka");
+        NSLog(@"Not valid access token");
     }];
+    
+    
     return YES;
 }
 
