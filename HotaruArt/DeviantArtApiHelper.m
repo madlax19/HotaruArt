@@ -9,6 +9,9 @@
 #import "DeviantArtApiHelper.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import "DeviationObject.h"
+#import "NewestDeviation.h"
+#import "PopularDeviation.h"
+#import "HotDeviation.h"
 #import "Comment.h"
 #import "DACategory.h"
 #import <Lockbox/Lockbox.h>
@@ -225,7 +228,7 @@
             } else {
                 NSArray *results = [jsonData objectForKey:@"results"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                    [DeviationObject MR_importFromArray:results inContext:localContext];
+                    [NewestDeviation MR_importFromArray:results inContext:localContext];
                     if (success) {
                         success();
                     }
@@ -254,7 +257,7 @@
             } else {
                 NSArray *results = [jsonData objectForKey:@"results"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                    [DeviationObject MR_importFromArray:results inContext:localContext];
+                    [HotDeviation MR_importFromArray:results inContext:localContext];
                     if (success) {
                         success();
                     }
@@ -286,7 +289,7 @@
             } else {
                 NSArray *results = [jsonData objectForKey:@"results"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                    [DeviationObject MR_importFromArray:results inContext:localContext];
+                    [PopularDeviation MR_importFromArray:results inContext:localContext];
                     if (success) {
                         success();
                     }

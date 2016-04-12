@@ -1,0 +1,15 @@
+//
+//  HotDeviation.m
+//  
+//
+//  Created by Elena on 12.04.16.
+//
+//
+
+#import "HotDeviation.h"
+
+@implementation HotDeviation
+
+// Insert code here to add functionality to your managed object subclass
+
+@end

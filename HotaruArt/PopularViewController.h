@@ -1,5 +1,5 @@
 //
-//  FeedViewController.h
+//  PopularViewController.h
 //  HotaruArt
 //
 //  Created by Elena on 20.03.16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FeedViewController : UIViewController
+@interface PopularViewController : UIViewController
 
 @end

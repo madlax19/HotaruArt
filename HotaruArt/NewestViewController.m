@@ -1,23 +1,24 @@
 //
-//  FeedViewController.m
+//  NewestViewController.m
 //  HotaruArt
 //
 //  Created by Elena on 20.03.16.
 //  Copyright © 2016 Elena. All rights reserved.
 //
 
-#import "FeedViewController.h"
+#import "NewestViewController.h"
 #import "FeedCollectionViewCell.h"
 #import "SWRevealViewController.h"
 #import <CoreData/CoreData.h>
 #import "DeviationObject.h"
+#import "NewestDeviation.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "DeviantArtApiHelper.h"
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "DetailViewController.h"
 
-@interface FeedViewController ()<NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface NewestViewController ()<NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionViewLayout;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -29,7 +30,7 @@
 @end
 
 
-@implementation FeedViewController
+@implementation NewestViewController
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -47,7 +48,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [SVProgressHUD show];
-    [[DeviantArtApiHelper sharedHelper] browseNewest:^{
+    [[DeviantArtApiHelper sharedHelper] browseNewest: nil success:^{
         [SVProgressHUD showSuccessWithStatus:@"Loaded"];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@"Error"];
@@ -62,7 +63,7 @@
 }
 
 - (void)updateFeed {
-    [[DeviantArtApiHelper sharedHelper] browseNewest:^{
+    [[DeviantArtApiHelper sharedHelper] browseNewest:nil success:^{
         [self.refreshControl endRefreshing];
     } failure:^{
         [self.refreshControl endRefreshing];
@@ -73,7 +74,7 @@
 - (NSFetchedResultsController*)fetchedResultsController {
     if (!_fetchedResultsController) {
         
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[DeviationObject MR_entityName]];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:[NewestDeviation MR_entityName]];
     request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"deviationObjectID" ascending:true]];
     NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:[NSManagedObjectContext MR_defaultContext] sectionNameKeyPath:nil cacheName:nil];
         controller.delegate = self;

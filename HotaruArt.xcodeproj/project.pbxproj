@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6D1E9A9D3DD459396CF3ECA3 /* libPods-HotaruArt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3A5C7ED3330593B092F609E /* libPods-HotaruArt.a */; };
+		F330FCF11CBD766700CC3255 /* PopularViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FCF01CBD766700CC3255 /* PopularViewController.m */; };
+		F330FCF41CBD773100CC3255 /* HotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FCF31CBD773100CC3255 /* HotViewController.m */; };
+		F330FD011CBD7A9600CC3255 /* HotDeviation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FCF61CBD7A9600CC3255 /* HotDeviation+CoreDataProperties.m */; };
+		F330FD021CBD7A9600CC3255 /* HotDeviation.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FCF81CBD7A9600CC3255 /* HotDeviation.m */; };
+		F330FD031CBD7A9600CC3255 /* PopularDeviation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FCFA1CBD7A9600CC3255 /* PopularDeviation+CoreDataProperties.m */; };
+		F330FD041CBD7A9600CC3255 /* PopularDeviation.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FCFC1CBD7A9600CC3255 /* PopularDeviation.m */; };
+		F330FD051CBD7A9600CC3255 /* NewestDeviation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FCFE1CBD7A9600CC3255 /* NewestDeviation+CoreDataProperties.m */; };
+		F330FD061CBD7A9600CC3255 /* NewestDeviation.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FD001CBD7A9600CC3255 /* NewestDeviation.m */; };
 		F34D5D6C1CA9A0550037E1D8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F34D5D6B1CA9A0550037E1D8 /* ProfileViewController.m */; };
 		F38FBD491CB6A2EC00A07B4C /* DACategory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FBD461CB6A2EC00A07B4C /* DACategory+CoreDataProperties.m */; };
 		F38FBD4A1CB6A2EC00A07B4C /* DACategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FBD481CB6A2EC00A07B4C /* DACategory.m */; };
@@ -18,7 +26,7 @@
 		F38FDB461C9EE73200390C83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38FDB451C9EE73200390C83 /* Assets.xcassets */; };
 		F38FDB491C9EE73200390C83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38FDB471C9EE73200390C83 /* LaunchScreen.storyboard */; };
 		F38FDB591C9EF20D00390C83 /* DeviantArtApiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB581C9EF20D00390C83 /* DeviantArtApiHelper.m */; };
-		F38FDB5C1C9F144D00390C83 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB5B1C9F144D00390C83 /* FeedViewController.m */; };
+		F38FDB5C1C9F144D00390C83 /* NewestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB5B1C9F144D00390C83 /* NewestViewController.m */; };
 		F38FDB5F1C9F146A00390C83 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB5E1C9F146A00390C83 /* MenuViewController.m */; };
 		F38FDB621C9F1AF200390C83 /* HotaruArtModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB601C9F1AF200390C83 /* HotaruArtModel.xcdatamodeld */; };
 		F3929C421CA7FE5A003153F9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3929C411CA7FE5A003153F9 /* DetailViewController.m */; };
@@ -45,6 +53,22 @@
 		12F181E450C32C7476273DE6 /* Pods-HotaruArt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotaruArt.release.xcconfig"; path = "Pods/Target Support Files/Pods-HotaruArt/Pods-HotaruArt.release.xcconfig"; sourceTree = "<group>"; };
 		A3A5C7ED3330593B092F609E /* libPods-HotaruArt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HotaruArt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC78F24F6358360A54A087CF /* Pods-HotaruArt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotaruArt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HotaruArt/Pods-HotaruArt.debug.xcconfig"; sourceTree = "<group>"; };
+		F330FCEF1CBD766700CC3255 /* PopularViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularViewController.h; sourceTree = "<group>"; };
+		F330FCF01CBD766700CC3255 /* PopularViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularViewController.m; sourceTree = "<group>"; };
+		F330FCF21CBD773100CC3255 /* HotViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotViewController.h; sourceTree = "<group>"; };
+		F330FCF31CBD773100CC3255 /* HotViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotViewController.m; sourceTree = "<group>"; };
+		F330FCF51CBD7A9600CC3255 /* HotDeviation+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HotDeviation+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F330FCF61CBD7A9600CC3255 /* HotDeviation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HotDeviation+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F330FCF71CBD7A9600CC3255 /* HotDeviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDeviation.h; sourceTree = "<group>"; };
+		F330FCF81CBD7A9600CC3255 /* HotDeviation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDeviation.m; sourceTree = "<group>"; };
+		F330FCF91CBD7A9600CC3255 /* PopularDeviation+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PopularDeviation+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F330FCFA1CBD7A9600CC3255 /* PopularDeviation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PopularDeviation+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F330FCFB1CBD7A9600CC3255 /* PopularDeviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularDeviation.h; sourceTree = "<group>"; };
+		F330FCFC1CBD7A9600CC3255 /* PopularDeviation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularDeviation.m; sourceTree = "<group>"; };
+		F330FCFD1CBD7A9600CC3255 /* NewestDeviation+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NewestDeviation+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F330FCFE1CBD7A9600CC3255 /* NewestDeviation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NewestDeviation+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F330FCFF1CBD7A9600CC3255 /* NewestDeviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewestDeviation.h; sourceTree = "<group>"; };
+		F330FD001CBD7A9600CC3255 /* NewestDeviation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewestDeviation.m; sourceTree = "<group>"; };
 		F34D5D6A1CA9A0550037E1D8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		F34D5D6B1CA9A0550037E1D8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		F38FBD451CB6A2EC00A07B4C /* DACategory+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DACategory+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -63,8 +87,8 @@
 		F38FDB4A1C9EE73200390C83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F38FDB571C9EF20D00390C83 /* DeviantArtApiHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviantArtApiHelper.h; sourceTree = "<group>"; };
 		F38FDB581C9EF20D00390C83 /* DeviantArtApiHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviantArtApiHelper.m; sourceTree = "<group>"; };
-		F38FDB5A1C9F144D00390C83 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
-		F38FDB5B1C9F144D00390C83 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		F38FDB5A1C9F144D00390C83 /* NewestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewestViewController.h; sourceTree = "<group>"; };
+		F38FDB5B1C9F144D00390C83 /* NewestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewestViewController.m; sourceTree = "<group>"; };
 		F38FDB5D1C9F146A00390C83 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		F38FDB5E1C9F146A00390C83 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		F38FDB611C9F1AF200390C83 /* HotaruArtModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HotaruArtModel.xcdatamodel; sourceTree = "<group>"; };
@@ -135,6 +159,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F330FCEB1CBD718200CC3255 /* Newest */ = {
+			isa = PBXGroup;
+			children = (
+				F38FDB5A1C9F144D00390C83 /* NewestViewController.h */,
+				F38FDB5B1C9F144D00390C83 /* NewestViewController.m */,
+			);
+			name = Newest;
+			sourceTree = "<group>";
+		};
+		F330FCED1CBD719D00CC3255 /* Hot */ = {
+			isa = PBXGroup;
+			children = (
+				F330FCF21CBD773100CC3255 /* HotViewController.h */,
+				F330FCF31CBD773100CC3255 /* HotViewController.m */,
+			);
+			name = Hot;
+			sourceTree = "<group>";
+		};
+		F330FCEE1CBD71A500CC3255 /* Popular */ = {
+			isa = PBXGroup;
+			children = (
+				F330FCEF1CBD766700CC3255 /* PopularViewController.h */,
+				F330FCF01CBD766700CC3255 /* PopularViewController.m */,
+			);
+			name = Popular;
+			sourceTree = "<group>";
+		};
 		F34D5D691CA99FA10037E1D8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +253,18 @@
 			isa = PBXGroup;
 			children = (
 				F38FDB601C9F1AF200390C83 /* HotaruArtModel.xcdatamodeld */,
+				F330FCF51CBD7A9600CC3255 /* HotDeviation+CoreDataProperties.h */,
+				F330FCF61CBD7A9600CC3255 /* HotDeviation+CoreDataProperties.m */,
+				F330FCF71CBD7A9600CC3255 /* HotDeviation.h */,
+				F330FCF81CBD7A9600CC3255 /* HotDeviation.m */,
+				F330FCF91CBD7A9600CC3255 /* PopularDeviation+CoreDataProperties.h */,
+				F330FCFA1CBD7A9600CC3255 /* PopularDeviation+CoreDataProperties.m */,
+				F330FCFB1CBD7A9600CC3255 /* PopularDeviation.h */,
+				F330FCFC1CBD7A9600CC3255 /* PopularDeviation.m */,
+				F330FCFD1CBD7A9600CC3255 /* NewestDeviation+CoreDataProperties.h */,
+				F330FCFE1CBD7A9600CC3255 /* NewestDeviation+CoreDataProperties.m */,
+				F330FCFF1CBD7A9600CC3255 /* NewestDeviation.h */,
+				F330FD001CBD7A9600CC3255 /* NewestDeviation.m */,
 				F3D8DD661CA2BE4A001218CF /* DeviationObject+CoreDataProperties.h */,
 				F3D8DD671CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m */,
 				F3D8DD681CA2BE4A001218CF /* DeviationObject.h */,
@@ -277,9 +340,10 @@
 		F38FDB561C9EF18200390C83 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				F330FCEE1CBD71A500CC3255 /* Popular */,
+				F330FCED1CBD719D00CC3255 /* Hot */,
+				F330FCEB1CBD718200CC3255 /* Newest */,
 				F3D8DD8A1CA483BB001218CF /* Cell */,
-				F38FDB5A1C9F144D00390C83 /* FeedViewController.h */,
-				F38FDB5B1C9F144D00390C83 /* FeedViewController.m */,
 			);
 			name = Feed;
 			sourceTree = "<group>";
@@ -422,6 +486,7 @@
 				F3D8DD841CA2BE4A001218CF /* Thumb+CoreDataProperties.m in Sources */,
 				F38FBD491CB6A2EC00A07B4C /* DACategory+CoreDataProperties.m in Sources */,
 				F3929C451CA8051B003153F9 /* DeviationTableViewCell.m in Sources */,
+				F330FD011CBD7A9600CC3255 /* HotDeviation+CoreDataProperties.m in Sources */,
 				F3D8DD851CA2BE4A001218CF /* Thumb.m in Sources */,
 				F3929C421CA7FE5A003153F9 /* DetailViewController.m in Sources */,
 				F38FDB591C9EF20D00390C83 /* DeviantArtApiHelper.m in Sources */,
@@ -430,15 +495,20 @@
 				F38FDB5F1C9F146A00390C83 /* MenuViewController.m in Sources */,
 				F38FDB621C9F1AF200390C83 /* HotaruArtModel.xcdatamodeld in Sources */,
 				F3D8DD891CA2BE4A001218CF /* Image.m in Sources */,
-				F38FDB5C1C9F144D00390C83 /* FeedViewController.m in Sources */,
+				F330FCF11CBD766700CC3255 /* PopularViewController.m in Sources */,
+				F330FCF41CBD773100CC3255 /* HotViewController.m in Sources */,
+				F38FDB5C1C9F144D00390C83 /* NewestViewController.m in Sources */,
 				F38FDB411C9EE73200390C83 /* LoginViewController.m in Sources */,
 				F3D8DD821CA2BE4A001218CF /* Preview+CoreDataProperties.m in Sources */,
+				F330FD061CBD7A9600CC3255 /* NewestDeviation.m in Sources */,
 				F3D8DD641CA2B040001218CF /* Comment+CoreDataProperties.m in Sources */,
 				F3D8DD7F1CA2BE4A001218CF /* DeviationObject.m in Sources */,
 				F3D8DD831CA2BE4A001218CF /* Preview.m in Sources */,
 				F3D8DD861CA2BE4A001218CF /* User+CoreDataProperties.m in Sources */,
 				F38FDB3E1C9EE73200390C83 /* AppDelegate.m in Sources */,
 				F3D8DD651CA2B040001218CF /* Comment.m in Sources */,
+				F330FD031CBD7A9600CC3255 /* PopularDeviation+CoreDataProperties.m in Sources */,
+				F330FD021CBD7A9600CC3255 /* HotDeviation.m in Sources */,
 				F3D8DD881CA2BE4A001218CF /* Image+CoreDataProperties.m in Sources */,
 				F3D8DD871CA2BE4A001218CF /* User.m in Sources */,
 				F3D8DD7E1CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m in Sources */,
@@ -447,6 +517,8 @@
 				F3D8DD8D1CA48437001218CF /* FeedCollectionViewCell.m in Sources */,
 				F3929C481CA80538003153F9 /* CommentTableViewCell.m in Sources */,
 				F38FDB3B1C9EE73200390C83 /* main.m in Sources */,
+				F330FD051CBD7A9600CC3255 /* NewestDeviation+CoreDataProperties.m in Sources */,
+				F330FD041CBD7A9600CC3255 /* PopularDeviation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

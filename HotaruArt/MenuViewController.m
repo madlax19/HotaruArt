@@ -7,6 +7,7 @@
 //
 
 #import "MenuViewController.h"
+#import "SWRevealViewController.h"
 
 @interface MenuItem : NSObject
 
@@ -45,13 +46,13 @@
     [super viewDidLoad];
     self.menuItems = @[
                            [MenuItem itemWithTitle:@"Newest" action:^{
-                               NSLog(@"Newest");
+                               [self performSegueWithIdentifier:@"showNewest" sender:nil];
                            }],
                            [MenuItem itemWithTitle:@"Popular" action:^{
-                               NSLog(@"Popular");
+                               [self performSegueWithIdentifier:@"showPopular" sender:nil];
                            }],
                            [MenuItem itemWithTitle:@"Hot" action:^{
-                               NSLog(@"Hot");
+                               [self performSegueWithIdentifier:@"showHot" sender:nil];
                            }],
                            [MenuItem itemWithTitle:@"Sign Out" action:^{
                                NSLog(@"Sign Out");
@@ -89,6 +90,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MenuItem *item = [self.menuItems objectAtIndex:indexPath.row];
     item.action();
+    [self.revealViewController revealToggleAnimated:YES];
     if (indexPath.row == 3) {
         //sign out
     } else {
