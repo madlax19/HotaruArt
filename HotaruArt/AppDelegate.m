@@ -20,6 +20,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"HotaruArtModel"];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.102 green:0.063 blue:0.204 alpha:1.0]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     
     [[DeviantArtApiHelper sharedHelper] checkAuthTokenWithSuccess:^{
         [[DeviantArtApiHelper sharedHelper] getDeviantUserInfo:^{

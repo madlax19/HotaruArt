@@ -40,7 +40,8 @@
     self.collectionViewLayout.minimumInteritemSpacing = 8;
     self.collectionViewLayout.minimumLineSpacing = 8;
     self.refreshControl = [UIRefreshControl new];
-    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to update"];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    self.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to update" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]} ];
     [self.refreshControl addTarget:self action:@selector(updateFeed) forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:self.refreshControl];
 }
