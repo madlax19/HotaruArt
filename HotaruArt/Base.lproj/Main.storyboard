@@ -7,10 +7,62 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="d7q-my-9bi">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="eTP-SC-Z98" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F7E-Uu-aMH"/>
+                        <viewControllerLayoutGuide type="bottom" id="b6w-JH-7fG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CnT-cH-SDI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plR-Fb-KD8">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lep-Kx-U2j">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Jpu-VE-Q0A"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="DeviantArt" id="Rw2-Fk-yOD">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="O96-z2-wcC">
+                                            <connections>
+                                                <action selector="cancelButtonTouch:" destination="eTP-SC-Z98" id="WGk-lo-3Da"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lep-Kx-U2j" secondAttribute="trailing" id="4tW-A8-wt9"/>
+                            <constraint firstItem="plR-Fb-KD8" firstAttribute="leading" secondItem="CnT-cH-SDI" secondAttribute="leading" id="8E7-tq-89n"/>
+                            <constraint firstItem="lep-Kx-U2j" firstAttribute="top" secondItem="CnT-cH-SDI" secondAttribute="top" id="DEH-p9-zfa"/>
+                            <constraint firstAttribute="trailing" secondItem="plR-Fb-KD8" secondAttribute="trailing" id="JW6-E6-75A"/>
+                            <constraint firstItem="b6w-JH-7fG" firstAttribute="top" secondItem="plR-Fb-KD8" secondAttribute="bottom" id="Xkw-nZ-Gsy"/>
+                            <constraint firstItem="lep-Kx-U2j" firstAttribute="leading" secondItem="CnT-cH-SDI" secondAttribute="leading" id="i8U-sT-YiF"/>
+                            <constraint firstItem="plR-Fb-KD8" firstAttribute="top" secondItem="lep-Kx-U2j" secondAttribute="bottom" id="iud-0P-EGb"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="webView" destination="plR-Fb-KD8" id="qmS-XI-YWo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lKH-Pu-7Cd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="261" y="1066"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>

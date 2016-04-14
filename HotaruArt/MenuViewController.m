@@ -8,6 +8,8 @@
 
 #import "MenuViewController.h"
 #import "SWRevealViewController.h"
+#import "AppDelegate.h"
+#import "DeviantArtApiHelper.h"
 
 @interface MenuItem : NSObject
 
@@ -55,7 +57,10 @@
                                [self performSegueWithIdentifier:@"showHot" sender:nil];
                            }],
                            [MenuItem itemWithTitle:@"Sign Out" action:^{
-                               NSLog(@"Sign Out");
+                               DeviantArtApiHelper *helper = [DeviantArtApiHelper sharedHelper];
+                               helper.accessToken = nil;
+                               AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+                               [appDelegate showLoginScreen];
                            }]
                        ];
 }
@@ -91,9 +96,7 @@
     MenuItem *item = [self.menuItems objectAtIndex:indexPath.row];
     item.action();
     [self.revealViewController revealToggleAnimated:YES];
-    if (indexPath.row == 3) {
-        //sign out
-    } else {
+    if (indexPath.row != 3) {
         self.currentRow = indexPath.row;
     }
 }

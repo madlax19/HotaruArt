@@ -16,6 +16,7 @@
 		F330FD041CBD7A9600CC3255 /* PopularDeviation.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FCFC1CBD7A9600CC3255 /* PopularDeviation.m */; };
 		F330FD051CBD7A9600CC3255 /* NewestDeviation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FCFE1CBD7A9600CC3255 /* NewestDeviation+CoreDataProperties.m */; };
 		F330FD061CBD7A9600CC3255 /* NewestDeviation.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FD001CBD7A9600CC3255 /* NewestDeviation.m */; };
+		F330FD0C1CC02C0200CC3255 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FD0B1CC02C0200CC3255 /* WebViewController.m */; };
 		F34D5D6C1CA9A0550037E1D8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F34D5D6B1CA9A0550037E1D8 /* ProfileViewController.m */; };
 		F38FBD491CB6A2EC00A07B4C /* DACategory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FBD461CB6A2EC00A07B4C /* DACategory+CoreDataProperties.m */; };
 		F38FBD4A1CB6A2EC00A07B4C /* DACategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FBD481CB6A2EC00A07B4C /* DACategory.m */; };
@@ -69,6 +70,8 @@
 		F330FCFE1CBD7A9600CC3255 /* NewestDeviation+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NewestDeviation+CoreDataProperties.m"; sourceTree = "<group>"; };
 		F330FCFF1CBD7A9600CC3255 /* NewestDeviation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewestDeviation.h; sourceTree = "<group>"; };
 		F330FD001CBD7A9600CC3255 /* NewestDeviation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewestDeviation.m; sourceTree = "<group>"; };
+		F330FD0A1CC02C0200CC3255 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		F330FD0B1CC02C0200CC3255 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		F34D5D6A1CA9A0550037E1D8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		F34D5D6B1CA9A0550037E1D8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		F38FBD451CB6A2EC00A07B4C /* DACategory+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DACategory+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -186,6 +189,15 @@
 			name = Popular;
 			sourceTree = "<group>";
 		};
+		F330FD091CC02BE300CC3255 /* WebVIew */ = {
+			isa = PBXGroup;
+			children = (
+				F330FD0A1CC02C0200CC3255 /* WebViewController.h */,
+				F330FD0B1CC02C0200CC3255 /* WebViewController.m */,
+			);
+			name = WebVIew;
+			sourceTree = "<group>";
+		};
 		F34D5D691CA99FA10037E1D8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +252,7 @@
 		F38FDB501C9EF09100390C83 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F330FD091CC02BE300CC3255 /* WebVIew */,
 				F38FDB551C9EF17A00390C83 /* Menu */,
 				F38FDB541C9EF17100390C83 /* Login */,
 				F38FDB561C9EF18200390C83 /* Feed */,
@@ -484,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3D8DD841CA2BE4A001218CF /* Thumb+CoreDataProperties.m in Sources */,
+				F330FD0C1CC02C0200CC3255 /* WebViewController.m in Sources */,
 				F38FBD491CB6A2EC00A07B4C /* DACategory+CoreDataProperties.m in Sources */,
 				F3929C451CA8051B003153F9 /* DeviationTableViewCell.m in Sources */,
 				F330FD011CBD7A9600CC3255 /* HotDeviation+CoreDataProperties.m in Sources */,

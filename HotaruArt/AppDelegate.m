@@ -10,6 +10,7 @@
 #import "DeviantArtApiHelper.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import <SWRevealViewController/SWRevealViewController.h>
+#import "LoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -39,6 +40,12 @@
     
     
     return YES;
+}
+
+- (void)showLoginScreen {
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *loginViewController = [storyBoard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    self.window.rootViewController = loginViewController;
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options {

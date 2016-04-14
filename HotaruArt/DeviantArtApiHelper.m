@@ -400,8 +400,8 @@
 
 - (void)loginWithCompletionHandler:(void(^)(NSError* error))completionHandler{
     self.completionHandler = completionHandler;
-    NSString *url = @"https://www.deviantart.com/oauth2/authorize?scope=browse&redirect_uri=hotaruart://4281&response_type=code&client_id=4281";
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+//    NSString *url = @"https://www.deviantart.com/oauth2/authorize?scope=browse&redirect_uri=hotaruart://4281&response_type=code&client_id=4281";
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
 }
 
 - (void)callCompletionHandlerWithError:(NSError*) error {
