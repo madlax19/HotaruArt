@@ -73,6 +73,7 @@
             </userInfo>
         </attribute>
         <attribute name="is_watching" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isCurrentUser" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="usericon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES">
@@ -97,7 +98,7 @@
         <element name="Image" positionX="-461" positionY="435" width="128" height="105"/>
         <element name="Preview" positionX="-326" positionY="311" width="128" height="58"/>
         <element name="Thumb" positionX="-99" positionY="459" width="128" height="58"/>
-        <element name="User" positionX="234" positionY="306" width="128" height="193"/>
+        <element name="User" positionX="234" positionY="306" width="128" height="208"/>
         <element name="NewestDeviation" positionX="160" positionY="-117" width="128" height="43"/>
         <element name="PopularDeviation" positionX="-252" positionY="-90" width="128" height="43"/>
         <element name="HotDeviation" positionX="-27" positionY="-133" width="128" height="43"/>

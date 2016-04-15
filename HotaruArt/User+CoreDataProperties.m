@@ -13,6 +13,7 @@
 
 @implementation User (CoreDataProperties)
 
+@dynamic isCurrentUser;
 @dynamic is_watching;
 @dynamic type;
 @dynamic usericon;

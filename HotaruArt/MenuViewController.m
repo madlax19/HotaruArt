@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "AppDelegate.h"
 #import "DeviantArtApiHelper.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MenuItem : NSObject
 
@@ -35,7 +36,7 @@
 @interface MenuViewController () <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 @property (weak, nonatomic) IBOutlet UISearchBar *deviationsSearchBar;
 @property (nonatomic, strong) NSArray *menuItems;
 @property NSInteger currentRow;
@@ -63,10 +64,15 @@
                                [appDelegate showLoginScreen];
                            }]
                        ];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    DeviantArtApiHelper *helper = [DeviantArtApiHelper sharedHelper];
+    User *user = [helper currentUser];
+    self.userNameLabel.text = user.username;
+    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:user.usericon]];
 }
 
 #pragma mark - TableView data source

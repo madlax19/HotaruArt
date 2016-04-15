@@ -247,7 +247,7 @@
                     <connections>
                         <outlet property="avatarImageView" destination="D1g-67-kQz" id="A21-VI-AtV"/>
                         <outlet property="deviationsSearchBar" destination="j9O-5N-cKG" id="UTo-S7-yvh"/>
-                        <outlet property="userNameLabel" destination="rVO-Da-eTB" id="ToE-Mz-KPc"/>
+                        <outlet property="userNameLabel" destination="uZZ-2E-P0p" id="ybe-5o-QFt"/>
                         <segue destination="BhX-Ld-1wC" kind="custom" identifier="showPopular" customClass="SWRevealViewControllerSeguePushController" id="btk-Rr-PdI"/>
                         <segue destination="Q6M-xT-KB6" kind="custom" identifier="showHot" customClass="SWRevealViewControllerSeguePushController" id="mlp-6U-VsV"/>
                         <segue destination="RiF-O1-gpT" kind="custom" identifier="showNewest" customClass="SWRevealViewControllerSeguePushController" id="62r-jB-TxL"/>

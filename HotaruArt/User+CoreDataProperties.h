@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface User (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSNumber *is_watching;
+@property (nullable, nonatomic, retain) NSNumber *isCurrentUser;
 @property (nullable, nonatomic, retain) NSString *type;
 @property (nullable, nonatomic, retain) NSString *usericon;
 @property (nullable, nonatomic, retain) NSString *userID;

@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     NSString *urlString = @"https://www.deviantart.com/oauth2/authorize?scope=browse&redirect_uri=hotaruart://4281&response_type=code&client_id=4281";
+     NSString *urlString = @"https://www.deviantart.com/oauth2/authorize?scope=user%20basic%20browse&redirect_uri=hotaruart://4281&response_type=code&client_id=4281";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];

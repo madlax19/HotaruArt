@@ -111,36 +111,26 @@
             if (jsonError) {
                 failureBlock();
             } else {
-                NSString *userid = [jsonData objectForKey:@"userid"];
-                if (userid) {
-                    self.userId = userid;
-                }
-      
-                NSString *username = [jsonData objectForKey:@"username"];
-                if (username) {
-                    self.userName = username;
-                }
-
-                NSString *usericon = [jsonData objectForKey:@"usericon"];
-                if (usericon) {
-                    self.userIcon = usericon;
-                }
-
-                NSString *type = [jsonData objectForKey:@"type"];
-                if (type) {
-                    self.type = type;
-                }
-                
-                if (success) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        success();
-                    });
-                }
+                [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+                    User *user = [User MR_importFromObject:jsonData inContext:localContext];
+                    user.isCurrentUser = [NSNumber numberWithBool:YES];
+                } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+                    if (success) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            success();
+                        });
+                    }
+                }];
             }
         }
     }];
     [task resume];
 
+}
+
+- (User*)currentUser {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isCurrentUser=true"];
+    return [User MR_findFirstWithPredicate:predicate];
 }
 
 - (void)getUser:(NSString*)userName success:(void(^)(User*))success failure:(void(^)())failure {
