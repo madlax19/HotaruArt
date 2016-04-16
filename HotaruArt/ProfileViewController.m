@@ -79,8 +79,8 @@
 - (void)updateUI {
     self.userNameLabel.text = self.user.username;
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:self.user.usericon]];
-    [self.followingButton setTitle:[NSString stringWithFormat:@"Following %@", self.user.friendsCount] forState:UIControlStateNormal];
-    [self.followersButton setTitle:[NSString stringWithFormat:@"Followers %@", self.user.watchersCount] forState:UIControlStateNormal];
+    [self.followingButton setTitle:[NSString stringWithFormat:@"Favourites %@", self.user.userFavourites] forState:UIControlStateNormal];
+    [self.followersButton setTitle:[NSString stringWithFormat:@"Pageviews %@", self.user.profilePageviews] forState:UIControlStateNormal];
 }
 
 - (IBAction)followersButtonTouch:(id)sender {

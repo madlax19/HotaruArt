@@ -20,8 +20,8 @@
 @dynamic userID;
 @dynamic username;
 @dynamic coverPhoto;
-@dynamic watchersCount;
-@dynamic friendsCount;
+@dynamic profilePageviews;
+@dynamic userFavourites;
 @dynamic comments;
 @dynamic deviations;
 

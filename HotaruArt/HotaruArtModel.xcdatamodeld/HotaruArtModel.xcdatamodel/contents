@@ -75,14 +75,19 @@
                 <entry key="mappedKeyName" value="profile.cover_photo"/>
             </userInfo>
         </attribute>
-        <attribute name="friendsCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
-            <userInfo>
-                <entry key="mappedKeyName" value="stats.friends"/>
-            </userInfo>
-        </attribute>
         <attribute name="is_watching" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isCurrentUser" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="profilePageviews" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="stats.profile_pageviews"/>
+            </userInfo>
+        </attribute>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userFavourites" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="stats.user_favourites"/>
+            </userInfo>
+        </attribute>
         <attribute name="usericon" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" optional="YES" attributeType="String" syncable="YES">
             <userInfo>
@@ -90,11 +95,6 @@
             </userInfo>
         </attribute>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="watchersCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES">
-            <userInfo>
-                <entry key="mappedKeyName" value="stats.watchers"/>
-            </userInfo>
-        </attribute>
         <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Comment" inverseName="user" inverseEntity="Comment" syncable="YES"/>
         <relationship name="deviations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DeviationObject" inverseName="author" inverseEntity="DeviationObject" syncable="YES"/>
     </entity>

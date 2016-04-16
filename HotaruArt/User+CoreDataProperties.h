@@ -22,8 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *userID;
 @property (nullable, nonatomic, retain) NSString *username;
 @property (nullable, nonatomic, retain) NSString *coverPhoto;
-@property (nullable, nonatomic, retain) NSNumber *watchersCount;
-@property (nullable, nonatomic, retain) NSNumber *friendsCount;
+@property (nullable, nonatomic, retain) NSNumber *profilePageviews;
+@property (nullable, nonatomic, retain) NSNumber *userFavourites;
 @property (nullable, nonatomic, retain) NSSet<Comment *> *comments;
 @property (nullable, nonatomic, retain) NSSet<DeviationObject *> *deviations;
 

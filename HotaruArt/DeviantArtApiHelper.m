@@ -149,7 +149,11 @@
             if (jsonError) {
                 failureBlock();
             } else {
-                NSDictionary *userDictionary = [jsonData objectForKey:@"user"];
+                NSMutableDictionary *userDictionary = [NSMutableDictionary dictionaryWithDictionary:[jsonData objectForKey:@"user"]];
+                NSDictionary *stats = [jsonData objectForKey:@"stats"];
+                if (stats) {
+                    [userDictionary setObject:stats forKey:@"stats"];
+                }
                 if (userDictionary) {
                     [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
                         User *user = [User MR_importFromObject:userDictionary inContext:localContext];

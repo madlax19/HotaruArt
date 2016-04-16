@@ -65,7 +65,8 @@
                            }]
                        ];
     
-    
+    self.avatarImageView.layer.masksToBounds = YES;
+    self.avatarImageView.layer.cornerRadius = self.avatarImageView.bounds.size.height / 2;
     
 }
 

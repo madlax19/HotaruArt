@@ -89,6 +89,10 @@
         Image *image = self.deviationObject.preview != nil ? self.deviationObject.preview : self.deviationObject.content;
         DeviationTableViewCell* deviationCell = (DeviationTableViewCell *)cell;
         [deviationCell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:self.deviationObject.author.usericon]];
+        
+        deviationCell.avatarImageView.layer.masksToBounds = YES;
+        deviationCell.avatarImageView.layer.cornerRadius = deviationCell.avatarImageView.bounds.size.height / 2;
+        
         [deviationCell.deviationImageView sd_setImageWithURL:[NSURL URLWithString:image.src]];
         deviationCell.userNameLabel.text = self.deviationObject.author.username;
         deviationCell.onUserTitleTouch = ^{
@@ -98,6 +102,10 @@
         CommentTableViewCell *commentCell = (CommentTableViewCell *)cell;
         Comment *comment = self.fetchedResultsController.fetchedObjects[indexPath.row - 1];
         [commentCell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:comment.user.usericon]];
+        
+        commentCell.avatarImageView.layer.masksToBounds = YES;
+        commentCell.avatarImageView.layer.cornerRadius = commentCell.avatarImageView.bounds.size.height / 2;
+        
         commentCell.userNameLabel.text = comment.user.username;
         commentCell.commentLabel.attributedText = [[NSAttributedString alloc]initWithString:comment.body];
     }
