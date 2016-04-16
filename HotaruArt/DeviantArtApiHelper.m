@@ -113,7 +113,7 @@
                 failureBlock();
             } else {
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                    User *user = [User MR_importFromObject:jsonData inContext:localContext];
+                    User *user = [User MR_importFromObject:jsonData inContext:[NSManagedObjectContext MR_defaultContext]];
                     user.isCurrentUser = [NSNumber numberWithBool:YES];
                 } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
                     if (success) {
@@ -157,7 +157,7 @@
                 }
                 if (userDictionary) {
                     [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                        User *user = [User MR_importFromObject:userDictionary inContext:localContext];
+                        User *user = [User MR_importFromObject:userDictionary inContext:[NSManagedObjectContext MR_defaultContext]];
                         if (success) {
                             dispatch_async(dispatch_get_main_queue(), ^{
                                 success(user);
@@ -171,36 +171,6 @@
     [task resume];
     
 }
-
-- (void)getCategory:(void(^)())success failure:(void(^)())failure {
-    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/categorytree?token=%@", self.accessToken];
-    NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        void(^failureBlock)() = ^{
-            if (failure) {
-                 failure();
-            }
-        };
-        if (error) {
-            failureBlock();
-        } else {
-            NSError *jsonError = nil;
-            NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error:&jsonError];
-            if (jsonError) {
-                failureBlock();
-            } else {
-                NSArray *categoriesArray = [jsonData objectForKey:@"categories"];
-                if (categoriesArray) {
-                    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                        [DACategory MR_importFromArray:categoriesArray inContext:localContext];
-                    }];
-                }
-                
-            }
-        }
-    }];
-    [task resume];
-}
-
 
 - (void)browseNewest:(NSString*)searchText success:(void(^)())success failure:(void(^)())failure {
     NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/newest?token=%@", self.accessToken];
@@ -226,9 +196,9 @@
                 NSArray *results = [jsonData objectForKey:@"results"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
                     if (searchText && searchText.length > 0) {
-                        [SearchDeviation MR_importFromArray:results inContext:localContext];
+                        [SearchDeviation MR_importFromArray:results inContext:[NSManagedObjectContext MR_defaultContext]];
                     } else {
-                        [NewestDeviation MR_importFromArray:results inContext:localContext];
+                        [NewestDeviation MR_importFromArray:results inContext:[NSManagedObjectContext MR_defaultContext]];
                     }
                 } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
                     if (success) {
@@ -261,7 +231,7 @@
             } else {
                 NSArray *results = [jsonData objectForKey:@"results"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                    [HotDeviation MR_importFromArray:results inContext:localContext];
+                    [HotDeviation MR_importFromArray:results inContext:[NSManagedObjectContext MR_defaultContext]];
                     if (success) {
                         success();
                     }
@@ -294,9 +264,9 @@
                 NSArray *results = [jsonData objectForKey:@"results"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
                     if (searchText && searchText.length > 0) {
-                        [SearchDeviation MR_importFromArray:results inContext:localContext];
+                        [SearchDeviation MR_importFromArray:results inContext:[NSManagedObjectContext MR_defaultContext]];
                     } else {
-                        [PopularDeviation MR_importFromArray:results inContext:localContext];
+                        [PopularDeviation MR_importFromArray:results inContext:[NSManagedObjectContext MR_defaultContext]];
                     }
                 } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
                     if (success) {
@@ -327,7 +297,7 @@
             } else {
                 NSArray *results = [jsonData objectForKey:@"results"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                    [DeviationObject MR_importFromArray:results inContext:localContext];
+                    [DeviationObject MR_importFromArray:results inContext:[NSManagedObjectContext MR_defaultContext]];
                     if (success) {
                         success();
                     }
@@ -358,7 +328,7 @@
             } else {
                 NSArray *thread = [jsonData objectForKey:@"thread"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                    NSArray<Comment*> *array = [Comment MR_importFromArray:thread inContext:localContext];
+                    NSArray<Comment*> *array = [Comment MR_importFromArray:thread inContext:[NSManagedObjectContext MR_defaultContext]];
                     for (Comment *comment in array) {
                         comment.deviationID = deviationID;
                     }
