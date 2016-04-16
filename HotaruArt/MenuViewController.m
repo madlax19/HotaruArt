@@ -11,6 +11,10 @@
 #import "AppDelegate.h"
 #import "DeviantArtApiHelper.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "SearchViewController.h"
+#import <MagicalRecord/MagicalRecord.h>
+#import "SearchDeviation.h"
 
 @interface MenuItem : NSObject
 
@@ -49,15 +53,19 @@
     [super viewDidLoad];
     self.menuItems = @[
                            [MenuItem itemWithTitle:@"Newest" action:^{
+                               [self.deviationsSearchBar setUserInteractionEnabled:YES];
                                [self performSegueWithIdentifier:@"showNewest" sender:nil];
                            }],
                            [MenuItem itemWithTitle:@"Popular" action:^{
+                               [self.deviationsSearchBar setUserInteractionEnabled:YES];
                                [self performSegueWithIdentifier:@"showPopular" sender:nil];
                            }],
                            [MenuItem itemWithTitle:@"Hot" action:^{
+                               [self.deviationsSearchBar setUserInteractionEnabled:NO];
                                [self performSegueWithIdentifier:@"showHot" sender:nil];
                            }],
                            [MenuItem itemWithTitle:@"Sign Out" action:^{
+                               [self.deviationsSearchBar setUserInteractionEnabled:YES];
                                DeviantArtApiHelper *helper = [DeviantArtApiHelper sharedHelper];
                                helper.accessToken = nil;
                                AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
@@ -72,6 +80,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.deviationsSearchBar.text = nil;
     DeviantArtApiHelper *helper = [DeviantArtApiHelper sharedHelper];
     User *user = [helper currentUser];
     self.userNameLabel.text = user.username;
@@ -80,25 +89,52 @@
 
 #pragma mark - TableView data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.menuItems.count;
 }
 
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *tableCell = [tableView dequeueReusableCellWithIdentifier:@"menuCell" forIndexPath:indexPath];
     MenuItem *item = [self.menuItems objectAtIndex:indexPath.row];
     tableCell.textLabel.text = item.title;
     return tableCell;
 }
 
-- (void)searchBarResultsListButtonClicked:(UISearchBar *)searchBar {
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     if (self.deviationsSearchBar.text.length > 0) {
         [self sendSearchRequest:self.deviationsSearchBar.text];
     }
 }
 
-- (void)sendSearchRequest:(NSString*)searchText{
+- (void)sendSearchRequest:(NSString*)searchText {
+
+    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+    NSArray *all = [SearchDeviation MR_findAll];
+    for (SearchDeviation *object in all) {
+        [context deleteObject:object];
+    }
     
+    if (self.currentRow == 0) {
+        [SVProgressHUD show];
+        [[DeviantArtApiHelper sharedHelper]browseNewest:searchText success:^{
+            [SVProgressHUD showSuccessWithStatus:@""];
+            SearchViewController *searchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+                [(UINavigationController*)self.revealViewController.frontViewController pushViewController:searchVC animated:YES];
+            [self.revealViewController revealToggleAnimated:YES];
+        } failure:^{
+            [SVProgressHUD showErrorWithStatus:@""];
+        }];
+    } else if (self.currentRow == 1) {
+        [SVProgressHUD show];
+        [[DeviantArtApiHelper sharedHelper]browsePopular:searchText success:^{
+            [SVProgressHUD showSuccessWithStatus:@""];
+            SearchViewController *searchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchViewController"];
+            [(UINavigationController*)self.revealViewController.frontViewController pushViewController:searchVC animated:YES];
+            [self.revealViewController revealToggleAnimated:YES];
+        } failure:^{
+            [SVProgressHUD showErrorWithStatus:@""];
+        }];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -14,6 +14,7 @@
 #import "HotDeviation.h"
 #import "Comment.h"
 #import "DACategory.h"
+#import "SearchDeviation.h"
 #import <Lockbox/Lockbox.h>
 
 @interface DeviantArtApiHelper()
@@ -209,7 +210,9 @@
     NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         void(^failureBlock)() = ^{
             if (failure) {
-                failure();
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    failure();
+                });
             }
         };
         if (error) {
@@ -222,9 +225,16 @@
             } else {
                 NSArray *results = [jsonData objectForKey:@"results"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                    [NewestDeviation MR_importFromArray:results inContext:localContext];
+                    if (searchText && searchText.length > 0) {
+                        [SearchDeviation MR_importFromArray:results inContext:localContext];
+                    } else {
+                        [NewestDeviation MR_importFromArray:results inContext:localContext];
+                    }
+                } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
                     if (success) {
-                        success();
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            success();
+                        });
                     }
                 }];
             }
@@ -283,7 +293,12 @@
             } else {
                 NSArray *results = [jsonData objectForKey:@"results"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-                    [PopularDeviation MR_importFromArray:results inContext:localContext];
+                    if (searchText && searchText.length > 0) {
+                        [SearchDeviation MR_importFromArray:results inContext:localContext];
+                    } else {
+                        [PopularDeviation MR_importFromArray:results inContext:localContext];
+                    }
+                } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
                     if (success) {
                         success();
                     }

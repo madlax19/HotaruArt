@@ -66,6 +66,11 @@
     <entity name="Preview" representedClassName="Preview" parentEntity="Image" syncable="YES">
         <relationship name="deviationObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviationObject" inverseName="preview" inverseEntity="DeviationObject" syncable="YES"/>
     </entity>
+    <entity name="SearchDeviation" representedClassName="SearchDeviation" parentEntity="DeviationObject" syncable="YES">
+        <userInfo>
+            <entry key="relatedByAttribute" value="deviationObjectID"/>
+        </userInfo>
+    </entity>
     <entity name="Thumb" representedClassName="Thumb" parentEntity="Image" syncable="YES">
         <relationship name="deviationObject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DeviationObject" inverseName="thumbs" inverseEntity="DeviationObject" syncable="YES"/>
     </entity>
@@ -110,5 +115,6 @@
         <element name="NewestDeviation" positionX="160" positionY="-117" width="128" height="43"/>
         <element name="PopularDeviation" positionX="-252" positionY="-90" width="128" height="43"/>
         <element name="HotDeviation" positionX="-27" positionY="-133" width="128" height="43"/>
+        <element name="SearchDeviation" positionX="306" positionY="-88" width="128" height="43"/>
     </elements>
 </model>
