@@ -18,11 +18,10 @@
 #import "Image.h"
 #import "ProfileViewController.h"
 
-@interface DetailViewController () <UITableViewDataSource, NSFetchedResultsControllerDelegate, UITableViewDelegate>
+@interface DetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, strong) NSMutableArray *blockOperations;
 
 @end
 
@@ -30,6 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.estimatedRowHeight = 328;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
@@ -38,6 +38,8 @@
     [SVProgressHUD show];
     [[DeviantArtApiHelper sharedHelper] getCommentForDeviationID:self.deviationObject.deviationObjectID success:^{
         [SVProgressHUD showSuccessWithStatus:@""];
+        [self.fetchedResultsController performFetch:nil];
+        [self.tableView reloadData];
     } failure:^{
         [SVProgressHUD showErrorWithStatus:@""];
     }];
@@ -50,18 +52,10 @@
         request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"commentID" ascending:true]];
         request.predicate = [NSPredicate predicateWithFormat:@"deviationID = %@", self.deviationObject.deviationObjectID];
         NSFetchedResultsController *controller = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:[NSManagedObjectContext MR_defaultContext] sectionNameKeyPath:nil cacheName:nil];
-        controller.delegate = self;
         _fetchedResultsController = controller;
         [_fetchedResultsController performFetch:nil];
     }
     return _fetchedResultsController;
-}
-
-- (void)clearOperationQuery{
-    for (NSBlockOperation *operation in self.blockOperations) {
-        [operation cancel];
-    }
-    [self.blockOperations removeAllObjects];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -76,7 +70,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return indexPath.row == 0 ? 328.0 : 44.0;
+    return indexPath.row == 0 ? 328.0 : UITableViewAutomaticDimension;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -105,71 +99,8 @@
         Comment *comment = self.fetchedResultsController.fetchedObjects[indexPath.row - 1];
         [commentCell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:comment.user.usericon]];
         commentCell.userNameLabel.text = comment.user.username;
-        commentCell.commentLabel.text = comment.body;
+        commentCell.commentLabel.attributedText = [[NSAttributedString alloc]initWithString:comment.body];
     }
 }
-
-
-#pragma mark - NSFetchedResultsControllerDelegate
-
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-    [self clearOperationQuery];
-    [self.tableView beginUpdates];
-}
-
-- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
-    if (type == NSFetchedResultsChangeUpdate) {
-        NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationNone];
-        }];
-        [self.blockOperations addObject:operation];
-    } else if (type == NSFetchedResultsChangeInsert) {
-        NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-            [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationNone];
-        }];
-        [self.blockOperations addObject:operation];
-        
-    } else if (type == NSFetchedResultsChangeDelete) {
-        NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-            [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationNone];
-        }];
-        [self.blockOperations addObject:operation];
-    }
-}
-
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
-    if (type == NSFetchedResultsChangeUpdate) {
-        NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-            [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-        }];
-        [self.blockOperations addObject:operation];
-    } else if (type == NSFetchedResultsChangeInsert) {
-        NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationNone];
-        }];
-        [self.blockOperations addObject:operation];
-        
-    } else if (type == NSFetchedResultsChangeMove) {
-        NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-            [self.tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
-        }];
-        [self.blockOperations addObject:operation];
-    } else {
-        NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-        }];
-        [self.blockOperations addObject:operation];
-        
-    }
-}
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    for (NSBlockOperation *operation in self.blockOperations) {
-        [operation start];
-    }
-    [self.tableView endUpdates];
-    [self.blockOperations removeAllObjects];
-}
-
 
 @end

@@ -324,7 +324,9 @@
     NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         void(^failureBlock)() = ^{
             if (failure) {
-                failure();
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    failure();
+                });
             }
         };
         if (error) {
@@ -341,8 +343,11 @@
                     for (Comment *comment in array) {
                         comment.deviationID = deviationID;
                     }
+                } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
                     if (success) {
-                        success();
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            success();
+                        });
                     }
                 }];
             }
