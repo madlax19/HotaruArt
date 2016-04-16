@@ -107,12 +107,7 @@
 }
 
 - (void)sendSearchRequest:(NSString*)searchText {
-
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    NSArray *all = [SearchDeviation MR_findAll];
-    for (SearchDeviation *object in all) {
-        [context deleteObject:object];
-    }
+    [SearchDeviation MR_truncateAll];
     
     if (self.currentRow == 0) {
         [SVProgressHUD show];
