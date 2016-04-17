@@ -11,6 +11,7 @@
 #import <MagicalRecord/MagicalRecord.h>
 #import <SWRevealViewController/SWRevealViewController.h>
 #import "LoginViewController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface AppDelegate ()
 
@@ -21,6 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"HotaruArtModel"];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.102 green:0.063 blue:0.204 alpha:1.0]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
@@ -32,7 +34,7 @@
             revealController.rearViewRevealWidth = self.window.bounds.size.width * 0.66;
             self.window.rootViewController = revealController;
         } failure:^{
-            
+
         }];
     } failure:^{
         NSLog(@"Not valid access token");
