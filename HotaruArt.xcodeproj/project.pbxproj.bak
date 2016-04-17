@@ -21,15 +21,14 @@
 		F330FD151CC294DE00CC3255 /* SearchDeviation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FD121CC294DE00CC3255 /* SearchDeviation+CoreDataProperties.m */; };
 		F330FD161CC294DE00CC3255 /* SearchDeviation.m in Sources */ = {isa = PBXBuildFile; fileRef = F330FD141CC294DE00CC3255 /* SearchDeviation.m */; };
 		F34D5D6C1CA9A0550037E1D8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F34D5D6B1CA9A0550037E1D8 /* ProfileViewController.m */; };
-		F35DB5871CC430DB007FEA8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F35DB5861CC430DB007FEA8F /* main.m */; };
-		F35DB5891CC430F4007FEA8F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35DB5881CC430F4007FEA8F /* Info.plist */; };
-		F35DB58E1CC43107007FEA8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F35DB58A1CC43107007FEA8F /* LaunchScreen.storyboard */; };
-		F35DB58F1CC43107007FEA8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F35DB58C1CC43107007FEA8F /* Main.storyboard */; };
 		F38FBD491CB6A2EC00A07B4C /* DACategory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FBD461CB6A2EC00A07B4C /* DACategory+CoreDataProperties.m */; };
 		F38FBD4A1CB6A2EC00A07B4C /* DACategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FBD481CB6A2EC00A07B4C /* DACategory.m */; };
+		F38FDB3B1C9EE73200390C83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB3A1C9EE73200390C83 /* main.m */; };
 		F38FDB3E1C9EE73200390C83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB3D1C9EE73200390C83 /* AppDelegate.m */; };
 		F38FDB411C9EE73200390C83 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB401C9EE73200390C83 /* LoginViewController.m */; };
+		F38FDB441C9EE73200390C83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38FDB421C9EE73200390C83 /* Main.storyboard */; };
 		F38FDB461C9EE73200390C83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38FDB451C9EE73200390C83 /* Assets.xcassets */; };
+		F38FDB491C9EE73200390C83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F38FDB471C9EE73200390C83 /* LaunchScreen.storyboard */; };
 		F38FDB591C9EF20D00390C83 /* DeviantArtApiHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB581C9EF20D00390C83 /* DeviantArtApiHelper.m */; };
 		F38FDB5C1C9F144D00390C83 /* NewestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB5B1C9F144D00390C83 /* NewestViewController.m */; };
 		F38FDB5F1C9F146A00390C83 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F38FDB5E1C9F146A00390C83 /* MenuViewController.m */; };
@@ -84,20 +83,20 @@
 		F330FD141CC294DE00CC3255 /* SearchDeviation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDeviation.m; sourceTree = "<group>"; };
 		F34D5D6A1CA9A0550037E1D8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		F34D5D6B1CA9A0550037E1D8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		F35DB5861CC430DB007FEA8F /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = HotaruArt/SupportingFiles/main.m; sourceTree = SOURCE_ROOT; };
-		F35DB5881CC430F4007FEA8F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = HotaruArt/SupportingFiles/Info.plist; sourceTree = SOURCE_ROOT; };
-		F35DB58B1CC43107007FEA8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = HotaruArt/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		F35DB58D1CC43107007FEA8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = HotaruArt/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		F38FBD451CB6A2EC00A07B4C /* DACategory+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DACategory+CoreDataProperties.h"; sourceTree = "<group>"; };
 		F38FBD461CB6A2EC00A07B4C /* DACategory+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DACategory+CoreDataProperties.m"; sourceTree = "<group>"; };
 		F38FBD471CB6A2EC00A07B4C /* DACategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACategory.h; sourceTree = "<group>"; };
 		F38FBD481CB6A2EC00A07B4C /* DACategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACategory.m; sourceTree = "<group>"; };
 		F38FDB361C9EE73200390C83 /* HotaruArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotaruArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F38FDB3A1C9EE73200390C83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F38FDB3C1C9EE73200390C83 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F38FDB3D1C9EE73200390C83 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F38FDB3F1C9EE73200390C83 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F38FDB401C9EE73200390C83 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F38FDB431C9EE73200390C83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F38FDB451C9EE73200390C83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F38FDB481C9EE73200390C83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F38FDB4A1C9EE73200390C83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F38FDB571C9EF20D00390C83 /* DeviantArtApiHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviantArtApiHelper.h; sourceTree = "<group>"; };
 		F38FDB581C9EF20D00390C83 /* DeviantArtApiHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviantArtApiHelper.m; sourceTree = "<group>"; };
 		F38FDB5A1C9F144D00390C83 /* NewestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewestViewController.h; sourceTree = "<group>"; };
@@ -178,7 +177,7 @@
 				F38FDB5A1C9F144D00390C83 /* NewestViewController.h */,
 				F38FDB5B1C9F144D00390C83 /* NewestViewController.m */,
 			);
-			path = Newest;
+			name = Newest;
 			sourceTree = "<group>";
 		};
 		F330FCED1CBD719D00CC3255 /* Hot */ = {
@@ -187,7 +186,7 @@
 				F330FCF21CBD773100CC3255 /* HotViewController.h */,
 				F330FCF31CBD773100CC3255 /* HotViewController.m */,
 			);
-			path = Hot;
+			name = Hot;
 			sourceTree = "<group>";
 		};
 		F330FCEE1CBD71A500CC3255 /* Popular */ = {
@@ -196,7 +195,7 @@
 				F330FCEF1CBD766700CC3255 /* PopularViewController.h */,
 				F330FCF01CBD766700CC3255 /* PopularViewController.m */,
 			);
-			path = Popular;
+			name = Popular;
 			sourceTree = "<group>";
 		};
 		F330FD091CC02BE300CC3255 /* WebVIew */ = {
@@ -205,7 +204,7 @@
 				F330FD0A1CC02C0200CC3255 /* WebViewController.h */,
 				F330FD0B1CC02C0200CC3255 /* WebViewController.m */,
 			);
-			path = WebVIew;
+			name = WebVIew;
 			sourceTree = "<group>";
 		};
 		F330FD0D1CC292C800CC3255 /* Search */ = {
@@ -214,7 +213,7 @@
 				F330FD0E1CC2931E00CC3255 /* SearchViewController.h */,
 				F330FD0F1CC2931E00CC3255 /* SearchViewController.m */,
 			);
-			path = Search;
+			name = Search;
 			sourceTree = "<group>";
 		};
 		F34D5D691CA99FA10037E1D8 /* Profile */ = {
@@ -223,7 +222,7 @@
 				F34D5D6A1CA9A0550037E1D8 /* ProfileViewController.h */,
 				F34D5D6B1CA9A0550037E1D8 /* ProfileViewController.m */,
 			);
-			path = Profile;
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		F38FDB2D1C9EE73200390C83 = {
@@ -254,19 +253,18 @@
 				F38FDB511C9EF0AB00390C83 /* CoreData */,
 				F38FDB3C1C9EE73200390C83 /* AppDelegate.h */,
 				F38FDB3D1C9EE73200390C83 /* AppDelegate.m */,
-				F38FDB391C9EE73200390C83 /* SupportingFiles */,
+				F38FDB4A1C9EE73200390C83 /* Info.plist */,
+				F38FDB391C9EE73200390C83 /* Supporting Files */,
 			);
 			path = HotaruArt;
 			sourceTree = "<group>";
 		};
-		F38FDB391C9EE73200390C83 /* SupportingFiles */ = {
+		F38FDB391C9EE73200390C83 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F35DB5881CC430F4007FEA8F /* Info.plist */,
-				F35DB5861CC430DB007FEA8F /* main.m */,
+				F38FDB3A1C9EE73200390C83 /* main.m */,
 			);
-			name = SupportingFiles;
-			path = "Supporting Files";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		F38FDB501C9EF09100390C83 /* ViewControllers */ = {
@@ -280,7 +278,7 @@
 				F34D5D691CA99FA10037E1D8 /* Profile */,
 				F330FD0D1CC292C800CC3255 /* Search */,
 			);
-			path = ViewControllers;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		F38FDB511C9EF0AB00390C83 /* CoreData */ = {
@@ -336,7 +334,7 @@
 				F3D8DD621CA2B040001218CF /* Comment.h */,
 				F3D8DD631CA2B040001218CF /* Comment.m */,
 			);
-			path = CoreData;
+			name = CoreData;
 			sourceTree = "<group>";
 		};
 		F38FDB521C9EF0EA00390C83 /* DeviantArtAPI */ = {
@@ -345,16 +343,16 @@
 				F38FDB571C9EF20D00390C83 /* DeviantArtApiHelper.h */,
 				F38FDB581C9EF20D00390C83 /* DeviantArtApiHelper.m */,
 			);
-			path = DeviantArtAPI;
+			name = DeviantArtAPI;
 			sourceTree = "<group>";
 		};
 		F38FDB531C9EF11500390C83 /* UserInterface */ = {
 			isa = PBXGroup;
 			children = (
-				F35DB58A1CC43107007FEA8F /* LaunchScreen.storyboard */,
-				F35DB58C1CC43107007FEA8F /* Main.storyboard */,
+				F38FDB471C9EE73200390C83 /* LaunchScreen.storyboard */,
+				F38FDB421C9EE73200390C83 /* Main.storyboard */,
 			);
-			path = UserInterface;
+			name = UserInterface;
 			sourceTree = "<group>";
 		};
 		F38FDB541C9EF17100390C83 /* Login */ = {
@@ -363,7 +361,7 @@
 				F38FDB3F1C9EE73200390C83 /* LoginViewController.h */,
 				F38FDB401C9EE73200390C83 /* LoginViewController.m */,
 			);
-			path = Login;
+			name = Login;
 			sourceTree = "<group>";
 		};
 		F38FDB551C9EF17A00390C83 /* Menu */ = {
@@ -372,7 +370,7 @@
 				F38FDB5D1C9F146A00390C83 /* MenuViewController.h */,
 				F38FDB5E1C9F146A00390C83 /* MenuViewController.m */,
 			);
-			path = Menu;
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		F38FDB561C9EF18200390C83 /* Feed */ = {
@@ -383,7 +381,7 @@
 				F330FCEB1CBD718200CC3255 /* Newest */,
 				F3D8DD8A1CA483BB001218CF /* Cell */,
 			);
-			path = Feed;
+			name = Feed;
 			sourceTree = "<group>";
 		};
 		F3929C3E1CA7FDE5003153F9 /* Detail */ = {
@@ -393,7 +391,7 @@
 				F3929C401CA7FE5A003153F9 /* DetailViewController.h */,
 				F3929C411CA7FE5A003153F9 /* DetailViewController.m */,
 			);
-			path = Detail;
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		F3929C3F1CA7FE20003153F9 /* Cell */ = {
@@ -404,7 +402,7 @@
 				F3929C461CA80538003153F9 /* CommentTableViewCell.h */,
 				F3929C471CA80538003153F9 /* CommentTableViewCell.m */,
 			);
-			path = Cell;
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		F3D8DD8A1CA483BB001218CF /* Cell */ = {
@@ -413,7 +411,7 @@
 				F3D8DD8B1CA48436001218CF /* FeedCollectionViewCell.h */,
 				F3D8DD8C1CA48436001218CF /* FeedCollectionViewCell.m */,
 			);
-			path = Cell;
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,10 +473,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F35DB58E1CC43107007FEA8F /* LaunchScreen.storyboard in Resources */,
-				F35DB5891CC430F4007FEA8F /* Info.plist in Resources */,
+				F38FDB491C9EE73200390C83 /* LaunchScreen.storyboard in Resources */,
 				F38FDB461C9EE73200390C83 /* Assets.xcassets in Resources */,
-				F35DB58F1CC43107007FEA8F /* Main.storyboard in Resources */,
+				F38FDB441C9EE73200390C83 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +549,6 @@
 				F330FD031CBD7A9600CC3255 /* PopularDeviation+CoreDataProperties.m in Sources */,
 				F330FD021CBD7A9600CC3255 /* HotDeviation.m in Sources */,
 				F330FD161CC294DE00CC3255 /* SearchDeviation.m in Sources */,
-				F35DB5871CC430DB007FEA8F /* main.m in Sources */,
 				F3D8DD881CA2BE4A001218CF /* Image+CoreDataProperties.m in Sources */,
 				F3D8DD871CA2BE4A001218CF /* User.m in Sources */,
 				F3D8DD7E1CA2BE4A001218CF /* DeviationObject+CoreDataProperties.m in Sources */,
@@ -560,6 +556,7 @@
 				F34D5D6C1CA9A0550037E1D8 /* ProfileViewController.m in Sources */,
 				F3D8DD8D1CA48437001218CF /* FeedCollectionViewCell.m in Sources */,
 				F3929C481CA80538003153F9 /* CommentTableViewCell.m in Sources */,
+				F38FDB3B1C9EE73200390C83 /* main.m in Sources */,
 				F330FD051CBD7A9600CC3255 /* NewestDeviation+CoreDataProperties.m in Sources */,
 				F330FD041CBD7A9600CC3255 /* PopularDeviation.m in Sources */,
 			);
@@ -568,20 +565,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F35DB58A1CC43107007FEA8F /* LaunchScreen.storyboard */ = {
+		F38FDB421C9EE73200390C83 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F35DB58B1CC43107007FEA8F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		F35DB58C1CC43107007FEA8F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F35DB58D1CC43107007FEA8F /* Base */,
+				F38FDB431C9EE73200390C83 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F38FDB471C9EE73200390C83 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F38FDB481C9EE73200390C83 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -674,7 +671,7 @@
 			baseConfigurationReference = AC78F24F6358360A54A087CF /* Pods-HotaruArt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = HotaruArt/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = HotaruArt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.elena.HotaruArt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -686,7 +683,7 @@
 			baseConfigurationReference = 12F181E450C32C7476273DE6 /* Pods-HotaruArt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = HotaruArt/SupportingFiles/Info.plist;
+				INFOPLIST_FILE = HotaruArt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.elena.HotaruArt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
