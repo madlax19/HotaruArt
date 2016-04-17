@@ -85,7 +85,6 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
-        NSLog(@"%@", self.deviationObject.content);
         Image *image = self.deviationObject.preview != nil ? self.deviationObject.preview : self.deviationObject.content;
         DeviationTableViewCell* deviationCell = (DeviationTableViewCell *)cell;
         [deviationCell.avatarImageView sd_setImageWithURL:[NSURL URLWithString:self.deviationObject.author.usericon]];
@@ -93,7 +92,11 @@
         deviationCell.avatarImageView.layer.masksToBounds = YES;
         deviationCell.avatarImageView.layer.cornerRadius = deviationCell.avatarImageView.bounds.size.height / 2;
         
-        [deviationCell.deviationImageView sd_setImageWithURL:[NSURL URLWithString:image.src]];
+        [deviationCell.deviationImageView sd_setImageWithURL:[NSURL URLWithString:image.src] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (error) {
+                deviationCell.deviationImageView.image = [UIImage imageNamed:@"image_placeholder"];
+            }
+        }];
         deviationCell.userNameLabel.text = self.deviationObject.author.username;
         deviationCell.onUserTitleTouch = ^{
             [self performSegueWithIdentifier:@"showUserProfile" sender:nil];

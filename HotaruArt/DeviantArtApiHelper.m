@@ -163,6 +163,7 @@
                                 success(user);
                             });
                         }
+
                     }];
                 }
             }
@@ -173,7 +174,7 @@
 }
 
 - (void)browseNewest:(NSString*)searchText success:(void(^)())success failure:(void(^)())failure {
-    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/newest?token=%@", self.accessToken];
+    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/newest?token=%@&limit=20", self.accessToken];
     if (searchText && searchText.length > 0) {
         url = [NSString stringWithFormat:@"%@&q=%@", url, searchText];
     }
@@ -214,11 +215,13 @@
 }
 
 - (void)browseHot:(void(^)())success failure:(void(^)())failure{
-    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/hot?token=%@", self.accessToken];
+    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/hot?token=%@&limit=20", self.accessToken];
     NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         void(^failureBlock)() = ^{
             if (failure) {
-                failure();
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    failure();
+                });
             }
         };
         if (error) {
@@ -232,8 +235,11 @@
                 NSArray *results = [jsonData objectForKey:@"results"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
                     [HotDeviation MR_importFromArray:results inContext:[NSManagedObjectContext MR_defaultContext]];
+                } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
                     if (success) {
-                        success();
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            success();
+                        });
                     }
                 }];
             }
@@ -243,14 +249,16 @@
 }
 
 - (void)browsePopular:(NSString*)searchText success:(void (^)())success failure:(void (^)())failure {
-    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/popular?token=%@", self.accessToken];
+    NSString *url = [NSString stringWithFormat:@"https://www.deviantart.com/api/v1/oauth2/browse/popular?token=%@&limit=20", self.accessToken];
     if (searchText && searchText.length > 0) {
         url = [NSString stringWithFormat:@"%@&q=%@", url, searchText];
     }
     NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         void(^failureBlock)() = ^{
             if (failure) {
-                failure();
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    failure();
+                });
             }
         };
         if (error) {
@@ -270,7 +278,9 @@
                     }
                 } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
                     if (success) {
-                        success();
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            success();
+                        });
                     }
                 }];
             }
@@ -284,7 +294,9 @@
     NSURLSessionTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         void(^failureBlock)() = ^{
             if (failure) {
-                failure();
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    failure();
+                });
             }
         };
         if (error) {
@@ -298,8 +310,11 @@
                 NSArray *results = [jsonData objectForKey:@"results"];
                 [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
                     [DeviationObject MR_importFromArray:results inContext:[NSManagedObjectContext MR_defaultContext]];
+                } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
                     if (success) {
-                        success();
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            success();
+                        });
                     }
                 }];
             }

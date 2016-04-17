@@ -70,7 +70,13 @@
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
     FeedCollectionViewCell *feedCell = (FeedCollectionViewCell*)cell;
     DeviationObject *devObject = [self.fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row];
-    [feedCell.imageView sd_setImageWithURL:[NSURL URLWithString:devObject.thumbs.allObjects.firstObject.src]];
+    feedCell.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [feedCell.imageView sd_setImageWithURL:[NSURL URLWithString:devObject.thumbs.allObjects.firstObject.src] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (error) {
+            feedCell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+            feedCell.imageView.image = [UIImage imageNamed:@"image_placeholder"];
+        }
+    }];
 }
 
 
